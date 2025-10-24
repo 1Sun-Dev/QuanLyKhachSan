@@ -1,6 +1,12 @@
-﻿namespace QuanLyKhachSan
+﻿using Guna.UI2.WinForms;
+using Guna.UI2.WinForms.Enums;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace QuanLyKhachSan
 {
-    partial class frmMain
+    public partial class frmMain
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -12,145 +18,177 @@
         }
 
         #region Windows Form Designer generated code
+
         private void InitializeComponent()
         {
-            this.pnlSidebar = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
-            this.btnKhachHang = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDichVu = new Guna.UI2.WinForms.Guna2Button();
-            this.btnPhong = new Guna.UI2.WinForms.Guna2Button();
-            this.btnNhanVien = new Guna.UI2.WinForms.Guna2Button();
-            this.pnlMain = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.pnlSidebar.SuspendLayout();
-            this.pnlMain.SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.guna2BorderlessForm1 = new Guna2BorderlessForm(this.components);
+            this.panelSidebar = new Guna2Panel();
+            this.btnDangXuat = new Guna2Button();
+            this.btnBaoCao = new Guna2Button();
+            this.btnQLDichVu = new Guna2Button();
+            this.btnQLNhanVien = new Guna2Button();
+            this.btnQLKhachHang = new Guna2Button();
+            this.btnQLPhong = new Guna2Button();
+            this.btnThanhToan = new Guna2Button();
+            this.btnDatPhong = new Guna2Button();
+            this.btnSoDoPhong = new Guna2Button();
+            this.panelLogo = new Guna2Panel();
+            this.labelLogo = new Label();
+            this.panelContainer = new Guna2Panel();
+            this.panelTopBar = new Guna2Panel();
+            this.guna2ControlBoxMin = new Guna2ControlBox();
+            this.guna2ControlBoxMax = new Guna2ControlBox();
+            this.guna2ControlBoxClose = new Guna2ControlBox();
+            this.guna2DragControl1 = new Guna2DragControl(this.components);
+            this.panelSidebar.SuspendLayout();
+            this.panelLogo.SuspendLayout();
+            this.panelTopBar.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnlSidebar
-            // 
-            this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.pnlSidebar.Controls.Add(this.btnThoat);
-            this.pnlSidebar.Controls.Add(this.btnKhachHang);
-            this.pnlSidebar.Controls.Add(this.btnDichVu);
-            this.pnlSidebar.Controls.Add(this.btnPhong);
-            this.pnlSidebar.Controls.Add(this.btnNhanVien);
-            this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlSidebar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
-            this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
-            this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.Size = new System.Drawing.Size(200, 600);
-            this.pnlSidebar.TabIndex = 1;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnThoat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
-            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnThoat.Location = new System.Drawing.Point(0, 550);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(200, 50);
-            this.btnThoat.TabIndex = 0;
-            this.btnThoat.Text = "Thoát";
-            // 
-            // btnKhachHang
-            // 
-            this.btnKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnKhachHang.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
-            this.btnKhachHang.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnKhachHang.ForeColor = System.Drawing.Color.White;
-            this.btnKhachHang.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
-            this.btnKhachHang.Location = new System.Drawing.Point(0, 180);
-            this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.Size = new System.Drawing.Size(200, 60);
-            this.btnKhachHang.TabIndex = 1;
-            this.btnKhachHang.Text = "Khách hàng";
-            // 
-            // btnDichVu
-            // 
-            this.btnDichVu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDichVu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
-            this.btnDichVu.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnDichVu.ForeColor = System.Drawing.Color.White;
-            this.btnDichVu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
-            this.btnDichVu.Location = new System.Drawing.Point(0, 120);
-            this.btnDichVu.Name = "btnDichVu";
-            this.btnDichVu.Size = new System.Drawing.Size(200, 60);
-            this.btnDichVu.TabIndex = 2;
-            this.btnDichVu.Text = "Dịch vụ";
-            // 
-            // btnPhong
-            // 
-            this.btnPhong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPhong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
-            this.btnPhong.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnPhong.ForeColor = System.Drawing.Color.White;
-            this.btnPhong.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
-            this.btnPhong.Location = new System.Drawing.Point(0, 60);
-            this.btnPhong.Name = "btnPhong";
-            this.btnPhong.Size = new System.Drawing.Size(200, 60);
-            this.btnPhong.TabIndex = 3;
-            this.btnPhong.Text = "Phòng";
-            // 
-            // btnNhanVien
-            // 
-            this.btnNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNhanVien.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
-            this.btnNhanVien.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnNhanVien.ForeColor = System.Drawing.Color.White;
-            this.btnNhanVien.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
-            this.btnNhanVien.Location = new System.Drawing.Point(0, 0);
-            this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.Size = new System.Drawing.Size(200, 60);
-            this.btnNhanVien.TabIndex = 4;
-            this.btnNhanVien.Text = "Nhân viên";
-            // 
-            // pnlMain
-            // 
-            this.pnlMain.Controls.Add(this.lblTitle);
-            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(255)))));
-            this.pnlMain.Location = new System.Drawing.Point(200, 0);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1000, 600);
-            this.pnlMain.TabIndex = 0;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.lblTitle.Location = new System.Drawing.Point(250, 30);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(530, 46);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "🏨 Hệ thống Quản lý Khách Sạn";
-            // 
-            // frmMain
-            // 
-            this.ClientSize = new System.Drawing.Size(1200, 600);
-            this.Controls.Add(this.pnlMain);
-            this.Controls.Add(this.pnlSidebar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.frmMain_Load);
-            this.pnlSidebar.ResumeLayout(false);
-            this.pnlMain.ResumeLayout(false);
-            this.pnlMain.PerformLayout();
-            this.ResumeLayout(false);
 
+            // guna2BorderlessForm1
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+
+            // panelSidebar
+            this.panelSidebar.BackColor = Color.FromArgb(50, 55, 89);
+            this.panelSidebar.Controls.Add(this.btnDangXuat);
+            this.panelSidebar.Controls.Add(this.btnBaoCao);
+            this.panelSidebar.Controls.Add(this.btnQLDichVu);
+            this.panelSidebar.Controls.Add(this.btnQLNhanVien);
+            this.panelSidebar.Controls.Add(this.btnQLKhachHang);
+            this.panelSidebar.Controls.Add(this.btnQLPhong);
+            this.panelSidebar.Controls.Add(this.btnThanhToan);
+            this.panelSidebar.Controls.Add(this.btnDatPhong);
+            this.panelSidebar.Controls.Add(this.btnSoDoPhong);
+            this.panelSidebar.Controls.Add(this.panelLogo);
+            this.panelSidebar.Dock = DockStyle.Left;
+            this.panelSidebar.Size = new Size(220, 720);
+
+            // Setup button list
+            Guna2Button[] buttons =
+            {
+                btnSoDoPhong, btnDatPhong, btnThanhToan, btnQLPhong,
+                btnQLKhachHang, btnQLNhanVien, btnQLDichVu, btnBaoCao, btnDangXuat
+            };
+
+            foreach (var btn in buttons)
+            {
+                btn.Dock = DockStyle.Top;
+                btn.FillColor = Color.FromArgb(50, 55, 89);
+                btn.Font = new Font("Segoe UI", 10F);
+                btn.ForeColor = Color.White;
+                btn.TextAlign = HorizontalAlignment.Left;
+                btn.Height = 45;
+                btn.ImageOffset = new Point(10, 0);
+                btn.Padding = new Padding(10, 0, 0, 0);
+                btn.HoverState.FillColor = Color.FromArgb(70, 75, 110);
+            }
+
+            btnSoDoPhong.Text = "Sơ Đồ Phòng";
+            btnDatPhong.Text = "Đặt / Nhận Phòng";
+            btnThanhToan.Text = "Thanh Toán";
+            btnQLPhong.Text = "Quản Lý Phòng";
+            btnQLKhachHang.Text = "Quản Lý Khách Hàng";
+            btnQLNhanVien.Text = "Quản Lý Nhân Viên";
+            btnQLDichVu.Text = "Quản Lý Dịch Vụ";
+            btnBaoCao.Text = "Báo Cáo";
+            btnDangXuat.Text = "Đăng Xuất";
+
+            // Gắn event handler
+            btnSoDoPhong.Click += btnSoDoPhong_Click;
+            btnDatPhong.Click += btnDatPhong_Click;
+            btnThanhToan.Click += btnThanhToan_Click;
+            btnQLPhong.Click += btnQLPhong_Click;
+            btnQLKhachHang.Click += btnQLKhachHang_Click;
+            btnQLNhanVien.Click += btnQLNhanVien_Click;
+            btnQLDichVu.Click += btnQLDichVu_Click;
+            btnBaoCao.Click += btnBaoCao_Click;
+            btnDangXuat.Click += btnDangXuat_Click;
+
+            // panelLogo
+            this.panelLogo.Controls.Add(this.labelLogo);
+            this.panelLogo.Dock = DockStyle.Top;
+            this.panelLogo.Size = new Size(220, 95);
+
+            // labelLogo
+            this.labelLogo.Dock = DockStyle.Fill;
+            this.labelLogo.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
+            this.labelLogo.ForeColor = Color.White;
+            this.labelLogo.TextAlign = ContentAlignment.MiddleCenter;
+            this.labelLogo.Text = "KHÁCH SẠN ABC";
+
+            // panelTopBar
+            this.panelTopBar.BackColor = Color.WhiteSmoke;
+            this.panelTopBar.Dock = DockStyle.Top;
+            this.panelTopBar.Size = new Size(1060, 30);
+            this.panelTopBar.Controls.Add(this.guna2ControlBoxMin);
+            this.panelTopBar.Controls.Add(this.guna2ControlBoxMax);
+            this.panelTopBar.Controls.Add(this.guna2ControlBoxClose);
+
+            // guna2ControlBoxClose
+            this.guna2ControlBoxClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            this.guna2ControlBoxClose.Location = new Point(1015, 0);
+            this.guna2ControlBoxClose.IconColor = Color.Gray;
+
+            // guna2ControlBoxMax
+            this.guna2ControlBoxMax.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            this.guna2ControlBoxMax.Location = new Point(970, 0);
+            this.guna2ControlBoxMax.ControlBoxType = ControlBoxType.MaximizeBox;
+            this.guna2ControlBoxMax.IconColor = Color.Gray;
+
+            // guna2ControlBoxMin
+            this.guna2ControlBoxMin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            this.guna2ControlBoxMin.Location = new Point(925, 0);
+            this.guna2ControlBoxMin.ControlBoxType = ControlBoxType.MinimizeBox;
+            this.guna2ControlBoxMin.IconColor = Color.Gray;
+
+            // guna2DragControl1
+            this.guna2DragControl1.TargetControl = this.panelTopBar;
+            this.guna2DragControl1.TransparentWhileDrag = true;
+
+            // panelContainer
+            this.panelContainer.Dock = DockStyle.Fill;
+            this.panelContainer.BackColor = Color.White;
+
+            // frmMain
+            this.AutoScaleMode = AutoScaleMode.Font;
+            this.ClientSize = new Size(1280, 720);
+            this.Controls.Add(this.panelContainer);
+            this.Controls.Add(this.panelTopBar);
+            this.Controls.Add(this.panelSidebar);
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Text = "Quản Lý Khách Sạn";
+            this.Load += new EventHandler(this.frmMain_Load);
+
+            this.panelSidebar.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
+            this.panelTopBar.ResumeLayout(false);
+            this.ResumeLayout(false);
         }
 
-        private Guna.UI2.WinForms.Guna2Panel pnlSidebar;
-        private Guna.UI2.WinForms.Guna2Panel pnlMain;
-        private Guna.UI2.WinForms.Guna2Button btnNhanVien;
-        private Guna.UI2.WinForms.Guna2Button btnPhong;
-        private Guna.UI2.WinForms.Guna2Button btnDichVu;
-        private Guna.UI2.WinForms.Guna2Button btnKhachHang;
-        private Guna.UI2.WinForms.Guna2Button btnThoat;
-        private System.Windows.Forms.Label lblTitle;
         #endregion
+
+        private Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna2Panel panelSidebar;
+        private Guna2Panel panelLogo;
+        private Guna2Button btnSoDoPhong;
+        private Guna2Button btnDangXuat;
+        private Guna2Button btnBaoCao;
+        private Guna2Button btnQLDichVu;
+        private Guna2Button btnQLNhanVien;
+        private Guna2Button btnQLKhachHang;
+        private Guna2Button btnQLPhong;
+        private Guna2Button btnThanhToan;
+        private Guna2Button btnDatPhong;
+        private Label labelLogo;
+        private Guna2Panel panelContainer;
+        private Guna2Panel panelTopBar;
+        private Guna2ControlBox guna2ControlBoxMin;
+        private Guna2ControlBox guna2ControlBoxMax;
+        private Guna2ControlBox guna2ControlBoxClose;
+        private Guna2DragControl guna2DragControl1;
     }
 }
