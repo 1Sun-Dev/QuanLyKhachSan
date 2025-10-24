@@ -24,7 +24,7 @@ namespace QuanLyKhachSan
             // OpenChildForm(new frmSoDoPhong());
         }
 
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             if (activeForm != null)
                 activeForm.Close();
@@ -39,14 +39,38 @@ namespace QuanLyKhachSan
             childForm.Show();
         }
 
-        private void btnSoDoPhong_Click(object sender, EventArgs e) { }
-        private void btnDatPhong_Click(object sender, EventArgs e) { }
-        private void btnThanhToan_Click(object sender, EventArgs e) { }
-        private void btnQLPhong_Click(object sender, EventArgs e) { }
-        private void btnQLKhachHang_Click(object sender, EventArgs e) { }
-        private void btnQLNhanVien_Click(object sender, EventArgs e) { }
-        private void btnQLDichVu_Click(object sender, EventArgs e) { }
-        private void btnBaoCao_Click(object sender, EventArgs e) { }
+        private void btnSoDoPhong_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmSoDoPhong());
+        }
+        private void btnDatPhong_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmDatPhong());
+        }
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmThanhToan());
+        }
+        private void btnQLPhong_Click(object sender, EventArgs e) 
+        {
+            OpenChildForm(new frmDanhSachPhong());
+        }
+        private void btnQLKhachHang_Click(object sender, EventArgs e) 
+        {
+            OpenChildForm(new frmQLKhachHang());
+        }
+        private void btnQLNhanVien_Click(object sender, EventArgs e) 
+        {
+            OpenChildForm(new frmNhanVien());
+        }
+        private void btnQLDichVu_Click(object sender, EventArgs e) 
+        {
+            OpenChildForm(new frmQuanLyDichVu());
+        }
+        private void btnBaoCao_Click(object sender, EventArgs e) 
+        {
+            OpenChildForm(new frmViewerBaoCao());
+        }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
