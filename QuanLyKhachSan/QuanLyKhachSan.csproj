@@ -84,6 +84,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\frmThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmThanhToan.Designer.cs">
+      <DependentUpon>frmThanhToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmThanhToan2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmThanhToan2.Designer.cs">
+      <DependentUpon>frmThanhToan2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmThuKhacTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmThuKhacTT.Designer.cs">
+      <DependentUpon>frmThuKhacTT.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="UI\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +123,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\frmThanhToan.resx">
+      <DependentUpon>frmThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmThanhToan2.resx">
+      <DependentUpon>frmThanhToan2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmThuKhacTT.resx">
+      <DependentUpon>frmThuKhacTT.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
