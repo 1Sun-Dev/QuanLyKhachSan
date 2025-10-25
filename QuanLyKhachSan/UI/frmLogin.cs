@@ -11,7 +11,7 @@ namespace QuanLyKhachSan
     public partial class frmLogin : Form
     {
         private readonly string connectionString =
-            @"Data Source=Phuc-ne;Initial Catalog = QuanLyKhachSan; Integrated Security = True";
+            @"Data Source=NHI-TANG\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
 
         public frmLogin()
         {
@@ -24,15 +24,35 @@ namespace QuanLyKhachSan
             guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6;
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
+        
+
+        private void txtMatKhau_KeyDown(object sender, KeyEventArgs e)
         {
-            Application.Exit();
+            if (e.KeyCode == Keys.Enter)
+                btnDangNhap_Click(sender, e);
+        }
+
+        private string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                    builder.Append(b.ToString("x2"));
+                return builder.ToString();
+            }
+        }
+
+        private void txtTaiKhoan_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            string taiKhoan = txtTaiKhoan.Text.Trim();
-            string matKhau = txtMatKhau.Text.Trim();
+            string taiKhoan = gntxtTaiKhoan.Text.Trim();
+            string matKhau = gntxtMatKhau.Text.Trim();
 
             if (string.IsNullOrEmpty(taiKhoan) || string.IsNullOrEmpty(matKhau))
             {
@@ -93,27 +113,17 @@ namespace QuanLyKhachSan
             }
         }
 
-        private void txtMatKhau_KeyDown(object sender, KeyEventArgs e)
+        private void btnThoat_Click(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-                btnDangNhap_Click(sender, e);
+            this.Close();
         }
 
-        private string HashPassword(string password)
+        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            using (SHA256 sha256 = SHA256.Create())
+            if (MessageBox.Show("Thoát ứng dụng", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.No)
             {
-                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-                StringBuilder builder = new StringBuilder();
-                foreach (byte b in bytes)
-                    builder.Append(b.ToString("x2"));
-                return builder.ToString();
+                e.Cancel = true;
             }
-        }
-
-        private void txtTaiKhoan_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

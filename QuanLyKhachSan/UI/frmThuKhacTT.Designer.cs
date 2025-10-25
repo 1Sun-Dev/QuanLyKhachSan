@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.pnCacKhoanThuKhac = new System.Windows.Forms.Panel();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.gnElipThuKhacTT = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -84,11 +82,6 @@
             this.label5.Size = new System.Drawing.Size(274, 38);
             this.label5.TabIndex = 2;
             this.label5.Text = "Các khoản thu khác";
-            // 
-            // gnElipThuKhacTT
-            // 
-            this.gnElipThuKhacTT.BorderRadius = 18;
-            this.gnElipThuKhacTT.TargetControl = this.pnCacKhoanThuKhac;
             // 
             // guna2Panel1
             // 
@@ -145,7 +138,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(900, 320);
+            this.ClientSize = new System.Drawing.Size(900, 311);
             this.Controls.Add(this.pnCacKhoanThuKhac);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -165,7 +158,6 @@
         private System.Windows.Forms.Panel pnCacKhoanThuKhac;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2Elipse gnElipThuKhacTT;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

@@ -27,5 +27,12 @@ namespace QuanLyKhachSan.UI
         {
             MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            frmThanhToan thanhToan = new frmThanhToan();
+            thanhToan.ShowDialog();
+            this.Close();
+        }
     }
 }

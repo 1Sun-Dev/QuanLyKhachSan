@@ -12,7 +12,7 @@ namespace QuanLyKhachSan
     {
         // 1. Chuỗi kết nối
         private string connectionString =
-            @"Data Source=Phuc-ne;Initial Catalog = QuanLyKhachSan; Integrated Security = True";
+            @"Data Source=NHI-TANG\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
 
         // 2. DataTables để quản lý dữ liệu động
         private DataTable dtPhongDaChon;
