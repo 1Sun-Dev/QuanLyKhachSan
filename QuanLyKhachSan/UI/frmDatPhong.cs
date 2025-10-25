@@ -662,6 +662,9 @@ namespace QuanLyKhachSan
 
         private void btnThemKH_Click(object sender, EventArgs e)
         {
+            frmQLKhachHang frmKH = new frmQLKhachHang();
+         
+            frmKH.ShowDialog();
 
         }
 

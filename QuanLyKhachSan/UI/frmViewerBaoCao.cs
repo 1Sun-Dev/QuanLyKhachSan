@@ -37,7 +37,7 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
                     // 2. Xóa dữ liệu cũ trên ReportViewer
                     reportViewer1.LocalReport.DataSources.Clear();
 
-                    // 3. Tạo nguồn dữ liệu mới cho Report
+                    // 3. Tạo nguồn dữ liệu mới cho Report  
                     // *** QUAN TRỌNG: Tên "DataSet1" phải khớp 100% với tên DataSet bạn đặt
                     // trong file .rdlc khi thiết kế ***
                     ReportDataSource rds = new ReportDataSource("DataSet_BaoCao", dt);
