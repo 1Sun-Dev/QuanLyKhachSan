@@ -10,7 +10,7 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
     {
         // 1. Chuỗi kết nối
         private string connectionString =
-            @"Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=False";
+           @"Data Source=Phuc-ne;Initial Catalog = QuanLyKhachSan; Integrated Security = True";
 
         public frmQuanLyDichVu()
         {

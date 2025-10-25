@@ -1,16 +1,17 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
-using Guna.UI2.WinForms;
 
 namespace QuanLyKhachSan
 {
     public partial class frmLogin : Form
     {
         private readonly string connectionString =
-            @"Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=False";
+            @"Data Source=Phuc-ne;Initial Catalog = QuanLyKhachSan; Integrated Security = True";
 
         public frmLogin()
         {
@@ -108,6 +109,11 @@ namespace QuanLyKhachSan
                     builder.Append(b.ToString("x2"));
                 return builder.ToString();
             }
+        }
+
+        private void txtTaiKhoan_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

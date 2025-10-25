@@ -13,7 +13,7 @@ namespace QuanLyKhachSan
     public partial class frmSoDoPhong : Form
     {
         private string connectionString =
-            @"Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=False";
+            @"Data Source=Phuc-ne;Initial Catalog = QuanLyKhachSan; Integrated Security = True";
 
         public frmSoDoPhong()
         {
