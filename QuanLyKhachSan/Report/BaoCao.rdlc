@@ -37,18 +37,18 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.80903in</Width>
+              <Width>1.99306in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.80903in</Width>
+              <Width>1.99306in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.80903in</Width>
+              <Width>1.99306in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.08333in</Height>
+              <Height>0.375in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -143,7 +143,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1.08333in</Height>
+              <Height>0.375in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -257,10 +257,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet_BaoCao</DataSetName>
-        <Top>1.18625in</Top>
-        <Left>1.06125in</Left>
-        <Height>2.16667in</Height>
-        <Width>5.42708in</Width>
+        <Top>1.20708in</Top>
+        <Left>0.81125in</Left>
+        <Height>0.75in</Height>
+        <Width>5.97917in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>

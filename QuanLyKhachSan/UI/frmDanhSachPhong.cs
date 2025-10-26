@@ -10,8 +10,8 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
     {
         // 1. Chuỗi kết nối
         private string connectionString =
-            @"Data Source=NHI-TANG\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
-
+           @"Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        public event EventHandler PhongDataChanged;
         public frmDanhSachPhong()
         {
             InitializeComponent();
@@ -197,6 +197,7 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
                 MessageBox.Show("Thêm phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadGridData();
                 ClearForm();
+                PhongDataChanged?.Invoke(this, EventArgs.Empty);
             }
             catch (SqlException sqlex) when (sqlex.Number == 2627) // Lỗi trùng khóa chính
             {
@@ -244,6 +245,7 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
 
                 MessageBox.Show("Cập nhật phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadGridData();
+                PhongDataChanged?.Invoke(this, EventArgs.Empty);
             }
             catch (Exception ex)
             {
@@ -278,6 +280,7 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
                     MessageBox.Show("Xóa phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadGridData();
                     ClearForm();
+                    PhongDataChanged?.Invoke(this, EventArgs.Empty);
                 }
                 catch (SqlException sqlex) when (sqlex.Number == 547) // Lỗi khóa ngoại
                 {

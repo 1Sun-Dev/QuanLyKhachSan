@@ -6,35 +6,60 @@ using System.Windows.Forms;
 // KHÔNG dùng using DevExpress.Data;
 using Guna.UI2.WinForms; // Dùng Guna controls
 
-namespace QuanLyKhachSan // Đảm bảo namespace này khớp với project
+namespace QuanLyKhachSan
 {
-    public partial class frmThanhToan : Form // Kế thừa từ Form chuẩn
+    public partial class frmThanhToan : Form
     {
         // 1. Chuỗi kết nối
         private string connectionString =
-           @"Data Source=NHI-TANG\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
+            @"Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=False";
 
-        // Biến lưu thông tin cần thiết khi chọn phòng
+        // Biến lưu thông tin
+        private string maPhongDuocChon = null; // <-- THÊM BIẾN NÀY
         private string selectedMaPTP = null;
         private DateTime ngayThue;
         private decimal donGiaPhong = 0;
 
-        public frmThanhToan()
+        // Hàm khởi tạo MẶC ĐỊNH (dùng khi mở từ menu)
+        public frmThanhToan(string maPhong)
         {
             InitializeComponent();
+            this.maPhongDuocChon = maPhong;
         }
 
         private void frmThanhToan_Load(object sender, EventArgs e)
         {
-            LoadPhongDangThue();
-            dateNgayTra.Value = DateTime.Now; // Mặc định ngày trả là hôm nay
+            // === SỬA DÒNG NÀY ===
+            this.lookUpPhongDangThue.SelectedIndexChanged -= new System.EventHandler(this.lookUpPhongDangThue_SelectedIndexChanged);
+            // ======================
 
-            // Gán sự kiện
+            this.dateNgayTra.ValueChanged -= new System.EventHandler(this.dateNgayTra_ValueChanged);
+
+            // === TẢI DỮ LIỆU ===
+            LoadPhongDangThue();
+            dateNgayTra.Value = DateTime.Now;
+
+            // === SỬA DÒNG NÀY ===
+            this.lookUpPhongDangThue.SelectedIndexChanged += new System.EventHandler(this.lookUpPhongDangThue_SelectedIndexChanged);
+            // ======================
+
+            this.dateNgayTra.ValueChanged += new System.EventHandler(this.dateNgayTra_ValueChanged);
+
+            // === CÁC THIẾT LẬP KHÁC ===
             btnThanhToan.Click += btnThanhToan_Click;
             btnHuy.Click += (s, args) => this.Close();
-
-            // Cấu hình cột Tổng cộng cho lưới Dịch vụ
             SetupDichVuGrid();
+
+            // === KIỂM TRA NẾU ĐƯỢC GỌI TỪ SƠ ĐỒ PHÒNG ===
+            if (this.maPhongDuocChon != null)
+            {
+                lookUpPhongDangThue.SelectedValue = this.maPhongDuocChon;
+                lookUpPhongDangThue.Enabled = false;
+            }
+            else
+            {
+                ClearDetails();
+            }
         }
 
         #region HÀM TẢI DỮ LIỆU VÀ TÍNH TOÁN
@@ -81,12 +106,12 @@ namespace QuanLyKhachSan // Đảm bảo namespace này khớp với project
         }
 
         // Sự kiện khi chọn phòng khác (Sửa tên hàm)
-        private void lookUpPhongDangThue_EditValueChanged(object sender, EventArgs e)
+        // DÒNG MỚI (ĐÚNG)
+        private void lookUpPhongDangThue_SelectedIndexChanged(object sender, EventArgs e)
         {
             Guna2ComboBox cbx = sender as Guna2ComboBox;
             if (cbx == null) return;
 
-            // Lấy giá trị đã chọn (là MaPhong)
             object selectedValue = cbx.SelectedValue;
 
             if (selectedValue == null || selectedValue == DBNull.Value)
@@ -96,8 +121,6 @@ namespace QuanLyKhachSan // Đảm bảo namespace này khớp với project
             }
 
             string maPhong = selectedValue.ToString();
-
-            // Gọi hàm load chi tiết với MaPhong đã lấy được
             LoadThongTinThuePhong(maPhong);
         }
 

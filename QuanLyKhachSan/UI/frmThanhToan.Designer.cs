@@ -540,7 +540,7 @@
             this.lookUpPhongDangThue.Name = "lookUpPhongDangThue";
             this.lookUpPhongDangThue.Size = new System.Drawing.Size(1291, 36);
             this.lookUpPhongDangThue.TabIndex = 1;
-            this.lookUpPhongDangThue.SelectedIndexChanged += new System.EventHandler(this.lookUpPhongDangThue_EditValueChanged);
+            this.lookUpPhongDangThue.SelectedIndexChanged += new System.EventHandler(this.lookUpPhongDangThue_SelectedIndexChanged);
             // 
             // label1
             // 

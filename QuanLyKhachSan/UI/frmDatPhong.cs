@@ -12,8 +12,7 @@ namespace QuanLyKhachSan
     {
         // 1. Chuỗi kết nối
         private string connectionString =
-            @"Data Source=NHI-TANG\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
-
+     @"Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         // 2. DataTables để quản lý dữ liệu động
         private DataTable dtPhongDaChon;
         private DataTable dtDichVuDaDung;
@@ -679,6 +678,11 @@ namespace QuanLyKhachSan
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelDichVu_Paint(object sender, PaintEventArgs e)
         {
 
         }

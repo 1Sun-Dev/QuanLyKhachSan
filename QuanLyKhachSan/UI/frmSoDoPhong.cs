@@ -13,7 +13,7 @@ namespace QuanLyKhachSan
     public partial class frmSoDoPhong : Form
     {
         private string connectionString =
-            @"Data Source=NHI-TANG\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
+        @"Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
         public frmSoDoPhong()
         {
@@ -101,13 +101,9 @@ namespace QuanLyKhachSan
                 string maPhong = roomInfo.Item1;
                 string tinhTrang = roomInfo.Item2;
 
-                // Lấy form Main (giả sử form này được mở trong form Main)
-                frmMain mainForm = this.ParentForm as frmMain;
-                if (mainForm == null)
-                {
-                    // Thử tìm MdiParent nếu cách trên thất bại
-                    mainForm = this.MdiParent as frmMain;
-                }
+                // Lấy form Main
+                frmMain mainForm = this.MdiParent as frmMain;
+                if (mainForm == null) { mainForm = this.ParentForm as frmMain; }
 
                 if (mainForm == null)
                 {
@@ -119,13 +115,19 @@ namespace QuanLyKhachSan
                 switch (tinhTrang.ToLower())
                 {
                     case "trống":
-                        // Gọi hàm OpenChildForm CÔNG KHAI của frmMain
+                        // Mở form Đặt/Nhận phòng
                         mainForm.OpenChildForm(new frmDatPhong());
                         break;
+
+                    // === SỬA LẠI TRƯỜNG HỢP NÀY ===
                     case "đang thuê":
+                        // Tạo form Thanh toán và TRUYỀN MÃ PHÒNG vào
+                        frmThanhToan fThanhToan = new frmThanhToan(maPhong);
                         // Gọi hàm OpenChildForm CÔNG KHAI của frmMain
-                        mainForm.OpenChildForm(new frmThanhToan());
+                        mainForm.OpenChildForm(fThanhToan);
                         break;
+                    // =============================
+
                     case "đang dọn":
                         if (MessageBox.Show($"Phòng {maPhong} đã dọn xong?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
@@ -163,6 +165,14 @@ namespace QuanLyKhachSan
                 MessageBox.Show($"Lỗi cập nhật trạng thái phòng {maPhong}: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+        }
+        public void ReloadRooms()
+        {
+            LoadRoomLayout(this.flowLayoutPanelPhong);
+        }
+        private void flowLayoutPanelPhong_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

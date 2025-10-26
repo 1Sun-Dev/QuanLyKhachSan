@@ -10,8 +10,7 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
     {
         // 1. Chuỗi kết nối
         private string connectionString =
-           @"Data Source=NHI-TANG\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
-
+         @"Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         public frmQuanLyDichVu()
         {
             InitializeComponent();
