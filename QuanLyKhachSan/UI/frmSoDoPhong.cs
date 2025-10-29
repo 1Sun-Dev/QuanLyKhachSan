@@ -23,7 +23,7 @@ namespace QuanLyKhachSan
         private void frmSoDoPhong_Load(object sender, EventArgs e)
         {
             // Gọi hàm load sơ đồ khi form load
-            LoadRoomLayout(this.flowLayoutPanelPhong);
+            /*LoadRoomLayout(this.flowLayoutPanelPhong);*/
         }
 
         // Tải và vẽ sơ đồ phòng

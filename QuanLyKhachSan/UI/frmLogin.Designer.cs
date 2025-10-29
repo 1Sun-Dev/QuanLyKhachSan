@@ -23,7 +23,7 @@
             this.gnEliptxtPassWord = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.gntxtMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnLoginUser = new System.Windows.Forms.Panel();
-            this.btnThoat = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnDangKy = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnDangNhap = new Guna.UI2.WinForms.Guna2GradientButton();
             this.lbForgotPasswordLG = new System.Windows.Forms.Label();
             this.rbtnGNT = new System.Windows.Forms.RadioButton();
@@ -32,6 +32,7 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.lbX = new System.Windows.Forms.Label();
             this.pnLoginUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -105,7 +106,7 @@
             // pnLoginUser
             // 
             this.pnLoginUser.Controls.Add(this.gntxtTaiKhoan);
-            this.pnLoginUser.Controls.Add(this.btnThoat);
+            this.pnLoginUser.Controls.Add(this.btnDangKy);
             this.pnLoginUser.Controls.Add(this.btnDangNhap);
             this.pnLoginUser.Controls.Add(this.lbForgotPasswordLG);
             this.pnLoginUser.Controls.Add(this.rbtnGNT);
@@ -117,24 +118,24 @@
             this.pnLoginUser.Size = new System.Drawing.Size(483, 632);
             this.pnLoginUser.TabIndex = 2;
             // 
-            // btnThoat
+            // btnDangKy
             // 
-            this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnThoat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThoat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThoat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThoat.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThoat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThoat.FillColor = System.Drawing.Color.DarkGray;
-            this.btnThoat.FillColor2 = System.Drawing.Color.Silver;
-            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(95, 510);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(290, 75);
-            this.btnThoat.TabIndex = 6;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            this.btnDangKy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnDangKy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangKy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangKy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDangKy.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDangKy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDangKy.FillColor = System.Drawing.Color.DarkGray;
+            this.btnDangKy.FillColor2 = System.Drawing.Color.Silver;
+            this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangKy.ForeColor = System.Drawing.Color.White;
+            this.btnDangKy.Location = new System.Drawing.Point(95, 510);
+            this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.Size = new System.Drawing.Size(290, 75);
+            this.btnDangKy.TabIndex = 6;
+            this.btnDangKy.Text = "Đăng ký";
+            this.btnDangKy.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnDangNhap
             // 
@@ -160,11 +161,11 @@
             this.lbForgotPasswordLG.AutoSize = true;
             this.lbForgotPasswordLG.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbForgotPasswordLG.ForeColor = System.Drawing.Color.Blue;
-            this.lbForgotPasswordLG.Location = new System.Drawing.Point(178, 454);
+            this.lbForgotPasswordLG.Location = new System.Drawing.Point(285, 300);
             this.lbForgotPasswordLG.Name = "lbForgotPasswordLG";
-            this.lbForgotPasswordLG.Size = new System.Drawing.Size(131, 20);
+            this.lbForgotPasswordLG.Size = new System.Drawing.Size(116, 20);
             this.lbForgotPasswordLG.TabIndex = 7;
-            this.lbForgotPasswordLG.Text = "Forgot PassWord ?";
+            this.lbForgotPasswordLG.Text = "Quên mật khẩu?";
             // 
             // rbtnGNT
             // 
@@ -218,15 +219,27 @@
             // guna2Elipse2
             // 
             this.guna2Elipse2.BorderRadius = 35;
-            this.guna2Elipse2.TargetControl = this.btnThoat;
+            this.guna2Elipse2.TargetControl = this.btnDangKy;
+            // 
+            // lbX
+            // 
+            this.lbX.AutoSize = true;
+            this.lbX.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbX.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbX.Location = new System.Drawing.Point(1120, 9);
+            this.lbX.Name = "lbX";
+            this.lbX.Size = new System.Drawing.Size(21, 23);
+            this.lbX.TabIndex = 4;
+            this.lbX.Text = "X";
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
-            this.CancelButton = this.btnThoat;
+            this.CancelButton = this.btnDangKy;
             this.ClientSize = new System.Drawing.Size(1153, 686);
+            this.Controls.Add(this.lbX);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.pnLoginUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -239,13 +252,14 @@
             this.pnLoginUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
         private Guna.UI2.WinForms.Guna2Elipse gnEliptxtUseName;
         private Guna.UI2.WinForms.Guna2Elipse gnEliptxtPassWord;
         private System.Windows.Forms.Panel pnLoginUser;
         private Guna.UI2.WinForms.Guna2TextBox gntxtTaiKhoan;
-        private Guna.UI2.WinForms.Guna2GradientButton btnThoat;
+        private Guna.UI2.WinForms.Guna2GradientButton btnDangKy;
         private Guna.UI2.WinForms.Guna2GradientButton btnDangNhap;
         private System.Windows.Forms.Label lbForgotPasswordLG;
         private System.Windows.Forms.RadioButton rbtnGNT;
@@ -255,5 +269,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+        private System.Windows.Forms.Label lbX;
     }
 }

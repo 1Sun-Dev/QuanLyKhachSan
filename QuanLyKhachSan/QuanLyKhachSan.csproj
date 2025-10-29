@@ -98,6 +98,12 @@
       <DependentUpon>202510251449064_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="UI\frmPhanQuyenNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPhanQuyenNhanVien.Designer.cs">
+      <DependentUpon>frmPhanQuyenNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmViewerBaoCao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,14 +200,11 @@
     <Compile Include="UI\frmThuKhacTT.Designer.cs">
       <DependentUpon>frmThuKhacTT.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Migrations\202510251449064_InitialCreate.resx">
       <DependentUpon>202510251449064_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPhanQuyenNhanVien.resx">
+      <DependentUpon>frmPhanQuyenNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmViewerBaoCao.resx">
       <DependentUpon>frmViewerBaoCao.cs</DependentUpon>
@@ -242,9 +245,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmThuKhacTT.resx">
       <DependentUpon>frmThuKhacTT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
