@@ -19,14 +19,14 @@
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.gnEliptxtUseName = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.gnEliptxtPassWord = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.pnLoginUser = new System.Windows.Forms.Panel();
             this.gntxtTaiKhoan = new Guna.UI2.WinForms.Guna2TextBox();
+            this.gnEliptxtPassWord = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.gntxtMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pnLoginUser = new System.Windows.Forms.Panel();
             this.btnThoat = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnDangNhap = new Guna.UI2.WinForms.Guna2GradientButton();
             this.lbForgotPasswordLG = new System.Windows.Forms.Label();
             this.rbtnGNT = new System.Windows.Forms.RadioButton();
-            this.gntxtMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbMatKhau = new System.Windows.Forms.Label();
             this.lbTaiKhoan = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -46,26 +46,6 @@
             // 
             this.gnEliptxtUseName.BorderRadius = 25;
             this.gnEliptxtUseName.TargetControl = this.gntxtTaiKhoan;
-            // 
-            // gnEliptxtPassWord
-            // 
-            this.gnEliptxtPassWord.BorderRadius = 25;
-            this.gnEliptxtPassWord.TargetControl = this.gntxtMatKhau;
-            // 
-            // pnLoginUser
-            // 
-            this.pnLoginUser.Controls.Add(this.gntxtTaiKhoan);
-            this.pnLoginUser.Controls.Add(this.btnThoat);
-            this.pnLoginUser.Controls.Add(this.btnDangNhap);
-            this.pnLoginUser.Controls.Add(this.lbForgotPasswordLG);
-            this.pnLoginUser.Controls.Add(this.rbtnGNT);
-            this.pnLoginUser.Controls.Add(this.gntxtMatKhau);
-            this.pnLoginUser.Controls.Add(this.lbMatKhau);
-            this.pnLoginUser.Controls.Add(this.lbTaiKhoan);
-            this.pnLoginUser.Location = new System.Drawing.Point(658, 33);
-            this.pnLoginUser.Name = "pnLoginUser";
-            this.pnLoginUser.Size = new System.Drawing.Size(483, 632);
-            this.pnLoginUser.TabIndex = 2;
             // 
             // gntxtTaiKhoan
             // 
@@ -90,6 +70,52 @@
             this.gntxtTaiKhoan.SelectedText = "";
             this.gntxtTaiKhoan.Size = new System.Drawing.Size(368, 55);
             this.gntxtTaiKhoan.TabIndex = 1;
+            // 
+            // gnEliptxtPassWord
+            // 
+            this.gnEliptxtPassWord.BorderRadius = 25;
+            this.gnEliptxtPassWord.TargetControl = this.gntxtMatKhau;
+            // 
+            // gntxtMatKhau
+            // 
+            this.gntxtMatKhau.BackColor = System.Drawing.Color.White;
+            this.gntxtMatKhau.BorderColor = System.Drawing.Color.White;
+            this.gntxtMatKhau.BorderThickness = 0;
+            this.gntxtMatKhau.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.gntxtMatKhau.DefaultText = "";
+            this.gntxtMatKhau.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.gntxtMatKhau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.gntxtMatKhau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.gntxtMatKhau.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.gntxtMatKhau.FillColor = System.Drawing.Color.PaleTurquoise;
+            this.gntxtMatKhau.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.gntxtMatKhau.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.gntxtMatKhau.ForeColor = System.Drawing.Color.Black;
+            this.gntxtMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.gntxtMatKhau.Location = new System.Drawing.Point(48, 211);
+            this.gntxtMatKhau.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.gntxtMatKhau.Name = "gntxtMatKhau";
+            this.gntxtMatKhau.PasswordChar = '●';
+            this.gntxtMatKhau.PlaceholderText = "";
+            this.gntxtMatKhau.SelectedText = "";
+            this.gntxtMatKhau.Size = new System.Drawing.Size(368, 55);
+            this.gntxtMatKhau.TabIndex = 2;
+            this.gntxtMatKhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMatKhau_KeyDown);
+            // 
+            // pnLoginUser
+            // 
+            this.pnLoginUser.Controls.Add(this.gntxtTaiKhoan);
+            this.pnLoginUser.Controls.Add(this.btnThoat);
+            this.pnLoginUser.Controls.Add(this.btnDangNhap);
+            this.pnLoginUser.Controls.Add(this.lbForgotPasswordLG);
+            this.pnLoginUser.Controls.Add(this.rbtnGNT);
+            this.pnLoginUser.Controls.Add(this.gntxtMatKhau);
+            this.pnLoginUser.Controls.Add(this.lbMatKhau);
+            this.pnLoginUser.Controls.Add(this.lbTaiKhoan);
+            this.pnLoginUser.Location = new System.Drawing.Point(658, 33);
+            this.pnLoginUser.Name = "pnLoginUser";
+            this.pnLoginUser.Size = new System.Drawing.Size(483, 632);
+            this.pnLoginUser.TabIndex = 2;
             // 
             // btnThoat
             // 
@@ -152,32 +178,6 @@
             this.rbtnGNT.TabStop = true;
             this.rbtnGNT.Text = "Ghi nhớ tôi";
             this.rbtnGNT.UseVisualStyleBackColor = true;
-            // 
-            // gntxtMatKhau
-            // 
-            this.gntxtMatKhau.BackColor = System.Drawing.Color.White;
-            this.gntxtMatKhau.BorderColor = System.Drawing.Color.White;
-            this.gntxtMatKhau.BorderThickness = 0;
-            this.gntxtMatKhau.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gntxtMatKhau.DefaultText = "";
-            this.gntxtMatKhau.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.gntxtMatKhau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.gntxtMatKhau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.gntxtMatKhau.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.gntxtMatKhau.FillColor = System.Drawing.Color.PaleTurquoise;
-            this.gntxtMatKhau.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gntxtMatKhau.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.gntxtMatKhau.ForeColor = System.Drawing.Color.Black;
-            this.gntxtMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gntxtMatKhau.Location = new System.Drawing.Point(48, 211);
-            this.gntxtMatKhau.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.gntxtMatKhau.Name = "gntxtMatKhau";
-            this.gntxtMatKhau.PasswordChar = '●';
-            this.gntxtMatKhau.PlaceholderText = "";
-            this.gntxtMatKhau.SelectedText = "";
-            this.gntxtMatKhau.Size = new System.Drawing.Size(368, 55);
-            this.gntxtMatKhau.TabIndex = 2;
-            this.gntxtMatKhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMatKhau_KeyDown);
             // 
             // lbMatKhau
             // 

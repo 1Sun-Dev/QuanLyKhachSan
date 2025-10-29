@@ -27,10 +27,21 @@ namespace QuanLyKhachSan.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt" +
-            "=True;TrustServerCertificate=True")]
+            "=True")]
         public string QuanLyKhachSanConnectionString {
             get {
                 return ((string)(this["QuanLyKhachSanConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NHI-TANG\\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Securit" +
+            "y=True;TrustServerCertificate=True")]
+        public string QuanLyKhachSanConnectionString1 {
+            get {
+                return ((string)(this["QuanLyKhachSanConnectionString1"]));
             }
         }
     }
