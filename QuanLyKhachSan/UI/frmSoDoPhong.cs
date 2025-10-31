@@ -22,9 +22,24 @@ namespace QuanLyKhachSan
 
         private void frmSoDoPhong_Load(object sender, EventArgs e)
         {
-            // Gọi hàm load sơ đồ khi form load
-            /*LoadRoomLayout(this.flowLayoutPanelPhong);*/
+            try
+            {
+                if (flowLayoutPanelPhong == null)
+                {
+                    MessageBox.Show("Không tìm thấy FlowLayoutPanel để hiển thị phòng!",
+                        "Lỗi giao diện", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                LoadRoomLayout(this.flowLayoutPanelPhong);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải sơ đồ phòng: " + ex.Message,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         // Tải và vẽ sơ đồ phòng
         private void LoadRoomLayout(FlowLayoutPanel targetPanel)
