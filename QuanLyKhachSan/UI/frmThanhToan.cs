@@ -12,7 +12,7 @@ namespace QuanLyKhachSan
     {
         // 1. Chuỗi kết nối
         private string connectionString =
-            @"Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=False";
+            @"Data Source=DESKTOP-6M2C0FQ\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=False";
 
         // Biến lưu thông tin
         private string maPhongDuocChon = null; // <-- THÊM BIẾN NÀY

@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using QuanLyKhachSan.UI;
 using System;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -11,7 +12,7 @@ namespace QuanLyKhachSan
     public partial class frmLogin : Form
     {
         private readonly string connectionString =
-          @"Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+          @"Data Source=DESKTOP-6M2C0FQ\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         public frmLogin()
         {
             InitializeComponent();
@@ -43,19 +44,14 @@ namespace QuanLyKhachSan
             }
         }
 
-        private void txtTaiKhoan_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            string taiKhoan = gntxtTaiKhoan.Text.Trim();
-            string matKhau = gntxtMatKhau.Text.Trim();
+            string email = gntxtTaiKhoan.Text.Trim();  // giờ dùng EMAIL làm tài khoản
+            string password = gntxtMatKhau.Text.Trim();
 
-            if (string.IsNullOrEmpty(taiKhoan) || string.IsNullOrEmpty(matKhau))
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ tài khoản và mật khẩu.",
+                MessageBox.Show("Vui lòng nhập đầy đủ email và mật khẩu.",
                                 "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -65,18 +61,18 @@ namespace QuanLyKhachSan
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "SELECT MatKhau FROM LOGIN WHERE TaiKhoan = @TaiKhoan";
+                    string query = "SELECT PASSWORD FROM LOGIN WHERE EMAIL = @Email";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@TaiKhoan", taiKhoan);
+                        cmd.Parameters.AddWithValue("@Email", email);
                         object result = cmd.ExecuteScalar();
 
                         if (result != null)
                         {
-                            string matKhauTuDB = result.ToString().Trim();
+                            string passwordFromDB = result.ToString().Trim();
 
                             // 🔹 So sánh trực tiếp vì DB chưa mã hoá
-                            if (matKhau == matKhauTuDB)
+                            if (password == passwordFromDB)
                             {
                                 MessageBox.Show("Đăng nhập thành công!", "Thông báo",
                                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -99,7 +95,7 @@ namespace QuanLyKhachSan
                         }
                         else
                         {
-                            MessageBox.Show("Tài khoản không tồn tại.",
+                            MessageBox.Show("Email không tồn tại.",
                                             "Lỗi Đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
@@ -112,17 +108,29 @@ namespace QuanLyKhachSan
             }
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Thoát ứng dụng", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.No)
+            if (MessageBox.Show("Thoát chương trình", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.No)
             {
                 e.Cancel = true;
             }
+        }
+
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+            frmDangKy dk = new frmDangKy();
+            dk.ShowDialog();
+            this.Hide();
+        }
+
+        private void lbX_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void chkBoxHienMK_CheckedChanged(object sender, EventArgs e)
+        {
+            gntxtMatKhau.PasswordChar = chkBoxHienMK.Checked ? '\0' : '•';
         }
     }
 }

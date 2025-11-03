@@ -118,13 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="thiết kế lại ảnh bằnggg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thiết kế lại ảnh bằnggg1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="thiết kế lại ảnh bằn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thiết kế lại ảnh bằn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imagestoanquyen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagestoanquyen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="thiết kế lại ảnh bằnggg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thiết kế lại ảnh bằnggg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="thiết kế lại ảnh bằnggg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thiết kế lại ảnh bằnggg1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imagescamquyen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagescamquyen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tải xuống" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tải xuống.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imagesTroVe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagesTroVe.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

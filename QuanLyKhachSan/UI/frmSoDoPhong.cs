@@ -13,7 +13,7 @@ namespace QuanLyKhachSan
     public partial class frmSoDoPhong : Form
     {
         private string connectionString =
-        @"Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        @"Data Source=DESKTOP-6M2C0FQ\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
         public frmSoDoPhong()
         {
@@ -23,7 +23,7 @@ namespace QuanLyKhachSan
         private void frmSoDoPhong_Load(object sender, EventArgs e)
         {
             // Gọi hàm load sơ đồ khi form load
-            /*LoadRoomLayout(this.flowLayoutPanelPhong);*/
+            LoadRoomLayout(this.flowLayoutPanelPhong);
         }
 
         // Tải và vẽ sơ đồ phòng

@@ -18,21 +18,22 @@
             this.components = new System.ComponentModel.Container();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.gnEliptxtUseName = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.gnEliptxtTaiKhoan = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.gntxtTaiKhoan = new Guna.UI2.WinForms.Guna2TextBox();
             this.gnEliptxtPassWord = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.gntxtMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnLoginUser = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnDangKy = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnDangNhap = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.lbForgotPasswordLG = new System.Windows.Forms.Label();
-            this.rbtnGNT = new System.Windows.Forms.RadioButton();
             this.lbMatKhau = new System.Windows.Forms.Label();
             this.lbTaiKhoan = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.lbX = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.chkBoxHienMK = new System.Windows.Forms.CheckBox();
             this.pnLoginUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -43,10 +44,10 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // gnEliptxtUseName
+            // gnEliptxtTaiKhoan
             // 
-            this.gnEliptxtUseName.BorderRadius = 25;
-            this.gnEliptxtUseName.TargetControl = this.gntxtTaiKhoan;
+            this.gnEliptxtTaiKhoan.BorderRadius = 25;
+            this.gnEliptxtTaiKhoan.TargetControl = this.gntxtTaiKhoan;
             // 
             // gntxtTaiKhoan
             // 
@@ -61,10 +62,10 @@
             this.gntxtTaiKhoan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.gntxtTaiKhoan.FillColor = System.Drawing.Color.PaleTurquoise;
             this.gntxtTaiKhoan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gntxtTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.gntxtTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gntxtTaiKhoan.ForeColor = System.Drawing.Color.Black;
             this.gntxtTaiKhoan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gntxtTaiKhoan.Location = new System.Drawing.Point(48, 65);
+            this.gntxtTaiKhoan.Location = new System.Drawing.Point(49, 156);
             this.gntxtTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.gntxtTaiKhoan.Name = "gntxtTaiKhoan";
             this.gntxtTaiKhoan.PlaceholderText = "";
@@ -90,10 +91,10 @@
             this.gntxtMatKhau.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.gntxtMatKhau.FillColor = System.Drawing.Color.PaleTurquoise;
             this.gntxtMatKhau.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gntxtMatKhau.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.gntxtMatKhau.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gntxtMatKhau.ForeColor = System.Drawing.Color.Black;
             this.gntxtMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gntxtMatKhau.Location = new System.Drawing.Point(48, 211);
+            this.gntxtMatKhau.Location = new System.Drawing.Point(49, 302);
             this.gntxtMatKhau.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.gntxtMatKhau.Name = "gntxtMatKhau";
             this.gntxtMatKhau.PasswordChar = '●';
@@ -105,11 +106,12 @@
             // 
             // pnLoginUser
             // 
-            this.pnLoginUser.Controls.Add(this.gntxtTaiKhoan);
+            this.pnLoginUser.Controls.Add(this.chkBoxHienMK);
+            this.pnLoginUser.Controls.Add(this.label1);
             this.pnLoginUser.Controls.Add(this.btnDangKy);
+            this.pnLoginUser.Controls.Add(this.panel1);
+            this.pnLoginUser.Controls.Add(this.gntxtTaiKhoan);
             this.pnLoginUser.Controls.Add(this.btnDangNhap);
-            this.pnLoginUser.Controls.Add(this.lbForgotPasswordLG);
-            this.pnLoginUser.Controls.Add(this.rbtnGNT);
             this.pnLoginUser.Controls.Add(this.gntxtMatKhau);
             this.pnLoginUser.Controls.Add(this.lbMatKhau);
             this.pnLoginUser.Controls.Add(this.lbTaiKhoan);
@@ -117,6 +119,16 @@
             this.pnLoginUser.Name = "pnLoginUser";
             this.pnLoginUser.Size = new System.Drawing.Size(483, 632);
             this.pnLoginUser.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(65, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(343, 45);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Đăng nhập tài khoản";
             // 
             // btnDangKy
             // 
@@ -130,12 +142,20 @@
             this.btnDangKy.FillColor2 = System.Drawing.Color.Silver;
             this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangKy.ForeColor = System.Drawing.Color.White;
-            this.btnDangKy.Location = new System.Drawing.Point(95, 510);
+            this.btnDangKy.Location = new System.Drawing.Point(118, 533);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(290, 75);
-            this.btnDangKy.TabIndex = 6;
+            this.btnDangKy.TabIndex = 9;
             this.btnDangKy.Text = "Đăng ký";
-            this.btnDangKy.Click += new System.EventHandler(this.btnThoat_Click);
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Location = new System.Drawing.Point(29, 509);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(438, 1);
+            this.panel1.TabIndex = 8;
             // 
             // btnDangNhap
             // 
@@ -149,42 +169,18 @@
             this.btnDangNhap.FillColor2 = System.Drawing.Color.MediumPurple;
             this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.ForeColor = System.Drawing.Color.White;
-            this.btnDangNhap.Location = new System.Drawing.Point(130, 360);
+            this.btnDangNhap.Location = new System.Drawing.Point(146, 431);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(218, 61);
             this.btnDangNhap.TabIndex = 3;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
-            // lbForgotPasswordLG
-            // 
-            this.lbForgotPasswordLG.AutoSize = true;
-            this.lbForgotPasswordLG.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbForgotPasswordLG.ForeColor = System.Drawing.Color.Blue;
-            this.lbForgotPasswordLG.Location = new System.Drawing.Point(285, 300);
-            this.lbForgotPasswordLG.Name = "lbForgotPasswordLG";
-            this.lbForgotPasswordLG.Size = new System.Drawing.Size(116, 20);
-            this.lbForgotPasswordLG.TabIndex = 7;
-            this.lbForgotPasswordLG.Text = "Quên mật khẩu?";
-            // 
-            // rbtnGNT
-            // 
-            this.rbtnGNT.AutoSize = true;
-            this.rbtnGNT.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnGNT.ForeColor = System.Drawing.Color.DarkGray;
-            this.rbtnGNT.Location = new System.Drawing.Point(56, 300);
-            this.rbtnGNT.Name = "rbtnGNT";
-            this.rbtnGNT.Size = new System.Drawing.Size(121, 27);
-            this.rbtnGNT.TabIndex = 5;
-            this.rbtnGNT.TabStop = true;
-            this.rbtnGNT.Text = "Ghi nhớ tôi";
-            this.rbtnGNT.UseVisualStyleBackColor = true;
-            // 
             // lbMatKhau
             // 
             this.lbMatKhau.AutoSize = true;
             this.lbMatKhau.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMatKhau.Location = new System.Drawing.Point(49, 147);
+            this.lbMatKhau.Location = new System.Drawing.Point(50, 238);
             this.lbMatKhau.Name = "lbMatKhau";
             this.lbMatKhau.Size = new System.Drawing.Size(152, 41);
             this.lbMatKhau.TabIndex = 2;
@@ -194,22 +190,11 @@
             // 
             this.lbTaiKhoan.AutoSize = true;
             this.lbTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTaiKhoan.Location = new System.Drawing.Point(41, 3);
+            this.lbTaiKhoan.Location = new System.Drawing.Point(42, 94);
             this.lbTaiKhoan.Name = "lbTaiKhoan";
             this.lbTaiKhoan.Size = new System.Drawing.Size(153, 41);
             this.lbTaiKhoan.TabIndex = 0;
             this.lbTaiKhoan.Text = "Tài khoản";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = global::QuanLyKhachSan.Properties.Resources.thiết_kế_lại_ảnh_bằnggg1;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(0, -2);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(637, 686);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 3;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // guna2Elipse1
             // 
@@ -231,13 +216,36 @@
             this.lbX.Size = new System.Drawing.Size(21, 23);
             this.lbX.TabIndex = 4;
             this.lbX.Text = "X";
+            this.lbX.Click += new System.EventHandler(this.lbX_Click);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::QuanLyKhachSan.Properties.Resources.thiết_kế_lại_ảnh_bằnggg1;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(0, -2);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(637, 686);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 3;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // chkBoxHienMK
+            // 
+            this.chkBoxHienMK.AutoSize = true;
+            this.chkBoxHienMK.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkBoxHienMK.Location = new System.Drawing.Point(57, 365);
+            this.chkBoxHienMK.Name = "chkBoxHienMK";
+            this.chkBoxHienMK.Size = new System.Drawing.Size(121, 21);
+            this.chkBoxHienMK.TabIndex = 11;
+            this.chkBoxHienMK.Text = "Hiện mật khẩu";
+            this.chkBoxHienMK.UseVisualStyleBackColor = true;
+            this.chkBoxHienMK.CheckedChanged += new System.EventHandler(this.chkBoxHienMK_CheckedChanged);
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
-            this.CancelButton = this.btnDangKy;
             this.ClientSize = new System.Drawing.Size(1153, 686);
             this.Controls.Add(this.lbX);
             this.Controls.Add(this.guna2PictureBox1);
@@ -255,14 +263,11 @@
             this.PerformLayout();
 
         }
-        private Guna.UI2.WinForms.Guna2Elipse gnEliptxtUseName;
+        private Guna.UI2.WinForms.Guna2Elipse gnEliptxtTaiKhoan;
         private Guna.UI2.WinForms.Guna2Elipse gnEliptxtPassWord;
         private System.Windows.Forms.Panel pnLoginUser;
         private Guna.UI2.WinForms.Guna2TextBox gntxtTaiKhoan;
-        private Guna.UI2.WinForms.Guna2GradientButton btnDangKy;
         private Guna.UI2.WinForms.Guna2GradientButton btnDangNhap;
-        private System.Windows.Forms.Label lbForgotPasswordLG;
-        private System.Windows.Forms.RadioButton rbtnGNT;
         private Guna.UI2.WinForms.Guna2TextBox gntxtMatKhau;
         private System.Windows.Forms.Label lbMatKhau;
         private System.Windows.Forms.Label lbTaiKhoan;
@@ -270,5 +275,9 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private System.Windows.Forms.Label lbX;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2GradientButton btnDangKy;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox chkBoxHienMK;
     }
 }

@@ -16,7 +16,7 @@ namespace QuanLyKhachSan
         private Color defaultButtonColor = Color.FromArgb(50, 55, 89);
 
         private string connectionString =
-        @"Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        @"Data Source=DESKTOP-6M2C0FQ\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         public frmMain()
         {
             InitializeComponent();
