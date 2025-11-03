@@ -14,7 +14,7 @@ namespace QuanLyKhachSan.UI
 {
     public partial class frmBaoCaoDatPhong : Form
     {
-        string connectionString = @"Data Source=DESKTOP-6M2C0FQ\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True;TrustServerCertificate=True";
+        string connectionString = @"Data Source=Phuc-ne;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         public frmBaoCaoDatPhong()
         {
             InitializeComponent();

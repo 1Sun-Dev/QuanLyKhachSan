@@ -11,7 +11,7 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
     public partial class frmCapNhatDichVu : Form
     {
         private string connectionString =
-            @"Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=False";
+            @"Data Source=Phuc-ne;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
         private string currentMaPTP; // Mã phiếu thuê phòng đang xử lý
         private string currentSoPhong; // Tên phòng đang xử lý

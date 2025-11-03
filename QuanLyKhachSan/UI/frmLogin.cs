@@ -12,7 +12,7 @@ namespace QuanLyKhachSan
     public partial class frmLogin : Form
     {
         private readonly string connectionString =
-          @"Data Source=DESKTOP-6M2C0FQ\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+          @"Data Source=Phuc-ne;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         public frmLogin()
         {
             InitializeComponent();
