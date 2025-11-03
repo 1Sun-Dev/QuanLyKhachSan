@@ -1,12 +1,12 @@
-﻿// Thêm các using cơ bản của WinForms và Guna
+﻿// Thêm các using cần thiết
 using Guna.UI2.WinForms;
 using Guna.UI2.WinForms.Enums;
-using System.Windows.Forms;
+using QuanLyKhachSan.Properties;
+using System.ComponentModel;
 using System.Drawing;
-using System.ComponentModel; // Cần cho IContainer
+using System.Windows.Forms;
 
-// Đảm bảo namespace là QuanLyKhachSan
-namespace QuanLyKhachSan
+namespace QuanLyKhachSan // Đảm bảo namespace khớp
 {
     partial class frmMain
     {
@@ -51,10 +51,11 @@ namespace QuanLyKhachSan
             this.panelLogo = new Guna.UI2.WinForms.Guna2Panel();
             this.labelLogo = new System.Windows.Forms.Label();
             this.panelContainer = new Guna.UI2.WinForms.Guna2Panel();
-            this.panelTopBar = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ControlBoxMin = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBoxMax = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBoxClose = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.panelTopBar = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnMenu = new Guna.UI2.WinForms.Guna2ImageButton(); // <-- THÊM NÚT MENU
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.btnPhanQuyenChucNang = new Guna.UI2.WinForms.Guna2Button();
             this.panelSidebar.SuspendLayout();
@@ -86,7 +87,7 @@ namespace QuanLyKhachSan
             this.panelSidebar.Location = new System.Drawing.Point(0, 0);
             this.panelSidebar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelSidebar.Name = "panelSidebar";
-            this.panelSidebar.Size = new System.Drawing.Size(293, 880);
+            this.panelSidebar.Size = new System.Drawing.Size(220, 715);
             this.panelSidebar.TabIndex = 0;
             // 
             // btnDangXuat
@@ -101,8 +102,7 @@ namespace QuanLyKhachSan
             this.btnDangXuat.ForeColor = System.Drawing.Color.White;
             this.btnDangXuat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDangXuat.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnDangXuat.Location = new System.Drawing.Point(0, 825);
-            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 670);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
             this.btnDangXuat.Size = new System.Drawing.Size(293, 55);
@@ -307,7 +307,7 @@ namespace QuanLyKhachSan
             this.labelLogo.Name = "labelLogo";
             this.labelLogo.Size = new System.Drawing.Size(293, 117);
             this.labelLogo.TabIndex = 0;
-            this.labelLogo.Text = "KHÁCH SẠN ";
+            this.labelLogo.Text = "KHÁCH SẠN ABC";
             this.labelLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelContainer
@@ -316,7 +316,7 @@ namespace QuanLyKhachSan
             this.panelContainer.Location = new System.Drawing.Point(293, 37);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1414, 843);
+            this.panelContainer.Size = new System.Drawing.Size(1060, 685);
             this.panelContainer.TabIndex = 1;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
@@ -327,12 +327,11 @@ namespace QuanLyKhachSan
             this.panelTopBar.Controls.Add(this.guna2ControlBoxMax);
             this.panelTopBar.Controls.Add(this.guna2ControlBoxClose);
             this.panelTopBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTopBar.Location = new System.Drawing.Point(293, 0);
-            this.panelTopBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTopBar.Location = new System.Drawing.Point(220, 0);
             this.panelTopBar.Name = "panelTopBar";
             this.panelTopBar.ShadowDecoration.Depth = 5;
             this.panelTopBar.ShadowDecoration.Enabled = true;
-            this.panelTopBar.Size = new System.Drawing.Size(1414, 37);
+            this.panelTopBar.Size = new System.Drawing.Size(1060, 30);
             this.panelTopBar.TabIndex = 2;
             // 
             // guna2ControlBoxMin
@@ -372,10 +371,42 @@ namespace QuanLyKhachSan
             this.guna2ControlBoxClose.Size = new System.Drawing.Size(60, 36);
             this.guna2ControlBoxClose.TabIndex = 0;
             // 
+            // panelTopBar
+            // 
+            this.panelTopBar.BackColor = System.Drawing.Color.White;
+            this.panelTopBar.Controls.Add(this.btnMenu); // <-- THÊM NÚT MENU
+            this.panelTopBar.Controls.Add(this.guna2ControlBoxMin);
+            this.panelTopBar.Controls.Add(this.guna2ControlBoxMax);
+            this.panelTopBar.Controls.Add(this.guna2ControlBoxClose);
+            this.panelTopBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTopBar.Location = new System.Drawing.Point(220, 0);
+            this.panelTopBar.Name = "panelTopBar";
+            this.panelTopBar.ShadowDecoration.Enabled = true;
+            this.panelTopBar.ShadowDecoration.Depth = 5;
+            this.panelTopBar.Size = new System.Drawing.Size(1060, 30);
+            this.panelTopBar.TabIndex = 2;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnMenu.HoverState.ImageSize = new System.Drawing.Size(24, 24);
+            
+            this.btnMenu.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnMenu.ImageRotate = 0F;
+            this.btnMenu.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnMenu.Location = new System.Drawing.Point(0, 0);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.PressedState.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnMenu.Size = new System.Drawing.Size(45, 30);
+            this.btnMenu.TabIndex = 3;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click); // <-- GÁN SỰ KIỆN
+            // 
             // guna2DragControl1
             // 
             this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2DragControl1.TargetControl = this.panelTopBar;
+            this.guna2DragControl1.TransparentWhileDrag = true;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
             // btnPhanQuyenChucNang
@@ -404,7 +435,7 @@ namespace QuanLyKhachSan
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1707, 880);
+            this.ClientSize = new System.Drawing.Size(1280, 715);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panelTopBar);
             this.Controls.Add(this.panelSidebar);
@@ -442,6 +473,5 @@ namespace QuanLyKhachSan
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBoxMax;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBoxClose;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private Guna2Button btnPhanQuyenChucNang;
     }
 }
