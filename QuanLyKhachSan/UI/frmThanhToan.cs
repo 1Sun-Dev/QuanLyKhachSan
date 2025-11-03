@@ -15,17 +15,22 @@ namespace QuanLyKhachSan
             @"Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=False";
 
         // Biến lưu thông tin
-        private string maPhongDuocChon = null; // <-- THÊM BIẾN NÀY
+        private string maPhongDuocChon = null; 
         private string selectedMaPTP = null;
         private DateTime ngayThue;
         private decimal donGiaPhong = 0;
 
         // Hàm khởi tạo MẶC ĐỊNH (dùng khi mở từ menu)
+        public frmThanhToan()
+        {
+            InitializeComponent();
+        }
         public frmThanhToan(string maPhong)
         {
             InitializeComponent();
-            this.maPhongDuocChon = maPhong;
+           
         }
+
 
         private void frmThanhToan_Load(object sender, EventArgs e)
         {
