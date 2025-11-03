@@ -164,6 +164,12 @@
     <Compile Include="UI\frmBaoCaoDatPhong.Designer.cs">
       <DependentUpon>frmBaoCaoDatPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\frmDangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmDangKy.Designer.cs">
+      <DependentUpon>frmDangKy.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmPhanQuyenChucNang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,8 +270,11 @@
     <EmbeddedResource Include="Migrations\202510251449064_InitialCreate.resx">
       <DependentUpon>202510251449064_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmPhanQuyenNhanVien.resx">
-      <DependentUpon>frmPhanQuyenNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="UI\frmDangKy.resx">
+      <DependentUpon>frmDangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPhanQuyenChucNang.resx">
+      <DependentUpon>frmPhanQuyenChucNang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmQuanLyDichVu.resx">
       <DependentUpon>frmQuanLyDichVu.cs</DependentUpon>
@@ -310,9 +319,6 @@
     <EmbeddedResource Include="UI\frmThuKhacTT.resx">
       <DependentUpon>frmThuKhacTT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmDangKy.resx">
-      <DependentUpon>frmDangKy.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\ReportDatPhong.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -336,6 +342,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\thiết kế lại ảnh bằnggg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagestoanquyen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagescamquyen1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

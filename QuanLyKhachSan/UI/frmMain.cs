@@ -13,8 +13,6 @@ namespace QuanLyKhachSan
     {
         private Form activeForm = null;
 
-        private string connectionString =
-        @"Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         public frmMain()
         {
             InitializeComponent();

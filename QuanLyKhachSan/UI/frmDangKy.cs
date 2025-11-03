@@ -1,5 +1,4 @@
-﻿using Microsoft.IdentityModel.Protocols;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -16,47 +15,54 @@ namespace QuanLyKhachSan.UI
 {
     public partial class frmDangKy : Form
     {
-        string connectionString = @"Data Source=DESKTOP-6M2C0FQ\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True;TrustServerCertificate=True";
         public frmDangKy()
         {
             InitializeComponent();
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            string email = gntxtEmail.Text.Trim();
-            string password = gntxtMatKhau.Text.Trim();
-            string confirmPassword = gntxtXacNhanMK.Text.Trim();
+            string email = txtEmail.Text.Trim();
+            string password = txtMatKhau.Text.Trim();
+            string confirmPassword = txtXacNhanMK.Text.Trim();
 
-            // Kiểm tra trống
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            // Kiểm tra email hợp lệ
             if (!Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
             {
                 MessageBox.Show("Email không hợp lệ! Phải chứa ký tự '@' và đúng định dạng.");
                 return;
             }
 
-            // Kiểm tra xác nhận mật khẩu
             if (password != confirmPassword)
             {
                 MessageBox.Show("Mật khẩu xác nhận không khớp!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            string connStr = ConfigurationManager.ConnectionStrings["HotelContextDB"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(connStr))
             {
                 try
                 {
                     conn.Open();
 
                     // Kiểm tra trùng email
-                    string checkQuery = "SELECT COUNT(*) FROM LOGIN WHERE EMAIL = @Email";
+                    string checkQuery = "SELECT COUNT(*) FROM LOGIN WHERE Email = @Email";
                     using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                     {
                         checkCmd.Parameters.AddWithValue("@Email", email);
@@ -69,7 +75,7 @@ namespace QuanLyKhachSan.UI
                     }
 
                     // Thêm user mới
-                    string insertQuery = "INSERT INTO LOGIN (EMAIL, PASSWORD) VALUES (@Email, @Password)";
+                    string insertQuery = "INSERT INTO LOGIN (Email, Password) VALUES (@Email, @Password)";
                     using (SqlCommand cmd = new SqlCommand(insertQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@Email", email);
@@ -77,16 +83,12 @@ namespace QuanLyKhachSan.UI
                         cmd.ExecuteNonQuery();
 
                         MessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        // Chuyển sang form Login
-                        this.Hide();
                         frmLogin lg = new frmLogin();
                         lg.ShowDialog();
-                        this.Close();
-
-                        gntxtEmail.Clear();
-                        gntxtMatKhau.Clear();
-                        gntxtXacNhanMK.Clear();
+                        this.Hide();
+                        txtEmail.Clear();
+                        txtMatKhau.Clear();
+                        txtXacNhanMK.Clear();
                     }
                 }
                 catch (Exception ex)
@@ -96,22 +98,10 @@ namespace QuanLyKhachSan.UI
             }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void chkBoxHienMK_CheckedChanged(object sender, EventArgs e)
         {
-            gntxtMatKhau.PasswordChar = chkBoxHienThiMK.Checked ? '\0' : '•';
-            gntxtXacNhanMK.PasswordChar = chkBoxHienThiMK.Checked ? '\0' : '•';
-        }
-
-        private void lbX_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            frmLogin lg = new frmLogin();
-            lg.ShowDialog();
-            this.Close();
+            txtMatKhau.PasswordChar = chkBoxHienMK.Checked ? '\0' : '•';
+            txtXacNhanMK.PasswordChar = chkBoxHienMK.Checked ? '\0' : '•';
         }
     }
 }

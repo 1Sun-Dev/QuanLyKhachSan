@@ -13,22 +13,13 @@ namespace QuanLyKhachSan.UI
 {
     public partial class frmPhanQuyenChucNang : Form
     {
-        private ComboBox cmbQuyen = new ComboBox();
         private string connectionString = "Data Source=DESKTOP-6M2C0FQ\\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
         public frmPhanQuyenChucNang()
         {
             InitializeComponent();
-            cmbQuyen.Items.AddRange(new string[] { "Xem", "Toàn quyền" });
-            cmbQuyen.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbQuyen.Visible = false;
-            cmbQuyen.SelectedIndexChanged += cmbQuyenn_SelectedIndexChanged;
-            lvChucNang.Controls.Add(cmbQuyen);
-
-            // Gắn sự kiện click chuột
-            lvChucNang.MouseClick += lvChucNang_MouseClick;
-            lvChucNang.Leave += lvChucNang_Leave;
+            lvChucNang.MouseUp += lvChucNang_MouseUp; // dùng MouseUp thay vì SelectedIndexChanged
         }
-        
+
         private void frmPhanQuyenChucNang_Load(object sender, EventArgs e)
         {
             LoadNhanVien();
@@ -36,7 +27,6 @@ namespace QuanLyKhachSan.UI
             lvChucNang.ContextMenuStrip = contextMenuQuyen;
 
         }
-
         private void LoadNhanVien()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -58,22 +48,21 @@ namespace QuanLyKhachSan.UI
         }
         private void LoadChucNang()
         {
+            // Giả sử bạn có sẵn danh sách chức năng
             lvChucNang.Items.Clear();
+            string[] chucNangList = { "Đặt phòng", "Thanh toán", "Quản lý khách hàng", "Phân quyền" };
 
-            string[] chucnang = { "Đặt phòng", "Thanh toán", "Quản lý phòng", "Quản lý tài sản","Quản lý sản phẩm - dịch vụ", "Quản lý thiết bị" };
-
-            foreach (string cn in chucnang)
+            foreach (string cn in chucNangList)
             {
                 ListViewItem item = new ListViewItem(cn);
-                item.SubItems.Add("");
+                item.SubItems.Add("Chưa cấp");
                 lvChucNang.Items.Add(item);
             }
         }
         private void LoadQuyenTheoNhanVien(string maNV)
         {
 
-            // Làm mới cột "Quyền" với giá trị mặc định
-            // 🧹 1️⃣ Làm mới toàn bộ cột quyền trước
+            // Làm mới trước
             foreach (ListViewItem item in lvChucNang.Items)
             {
                 item.SubItems[1].Text = "Chưa cấp";
@@ -101,10 +90,8 @@ namespace QuanLyKhachSan.UI
                         }
                     }
                 }
-
                 reader.Close();
             }
-
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -121,30 +108,28 @@ namespace QuanLyKhachSan.UI
             {
                 conn.Open();
 
-                // Xóa quyền cũ
                 SqlCommand deleteCmd = new SqlCommand("DELETE FROM PHANQUYEN WHERE MaNV = @MaNV", conn);
                 deleteCmd.Parameters.AddWithValue("@MaNV", maNV);
                 deleteCmd.ExecuteNonQuery();
 
-                // Ghi quyền mới
                 foreach (ListViewItem item in lvChucNang.Items)
                 {
                     string chucNang = item.Text;
                     string quyen = item.SubItems[1].Text;
 
-                    if (!string.IsNullOrEmpty(quyen))
+                    if (quyen != "Chưa cấp")
                     {
-                        string insertQuery = "INSERT INTO PHANQUYEN (MaNV, ChucNang, Quyen) VALUES (@MaNV, @ChucNang, @Quyen)";
-                        SqlCommand insertCmd = new SqlCommand(insertQuery, conn);
-                        insertCmd.Parameters.AddWithValue("@MaNV", maNV);
-                        insertCmd.Parameters.AddWithValue("@ChucNang", chucNang);
-                        insertCmd.Parameters.AddWithValue("@Quyen", quyen);
-                        insertCmd.ExecuteNonQuery();
+                        string insert = "INSERT INTO PHANQUYEN (MaNV, ChucNang, Quyen) VALUES (@MaNV, @ChucNang, @Quyen)";
+                        SqlCommand cmd = new SqlCommand(insert, conn);
+                        cmd.Parameters.AddWithValue("@MaNV", maNV);
+                        cmd.Parameters.AddWithValue("@ChucNang", chucNang);
+                        cmd.Parameters.AddWithValue("@Quyen", quyen);
+                        cmd.ExecuteNonQuery();
                     }
                 }
             }
 
-            MessageBox.Show("Lưu quyền thành công!");
+            MessageBox.Show("Đã lưu quyền cho nhân viên!");
         }
 
         private void lvNhanVien_SelectedIndexChanged(object sender, EventArgs e)
@@ -156,44 +141,38 @@ namespace QuanLyKhachSan.UI
             }
             else
             {
-                // 🧹 Nếu bỏ chọn hết nhân viên, cũng làm mới danh sách quyền
                 foreach (ListViewItem item in lvChucNang.Items)
-                {
                     item.SubItems[1].Text = "Chưa cấp";
-                }
             }
         }
 
-        private void lvChucNang_MouseClick(object sender, MouseEventArgs e)
+        private void lvChucNang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            if (lvNhanVien.SelectedItems.Count > 0)
             {
-                var item = lvChucNang.GetItemAt(e.X, e.Y);
-                if (item != null)
-                {
-                    lvChucNang.FocusedItem = item;
-                    item.Selected = true; // chọn dòng vừa click
-                    contextMenuQuyen.Show(lvChucNang, e.Location);
-                }
+                string maNV = lvNhanVien.SelectedItems[0].Text;
+                LoadQuyenTheoNhanVien(maNV);
             }
-        }
-
-        private void cmbQuyenn_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbQuyen.Tag != null)
+            else
             {
-                ListViewItem item = (ListViewItem)cmbQuyen.Tag;
-                item.SubItems[1].Text = cmbQuyen.Text;
+                foreach (ListViewItem item in lvChucNang.Items)
+                    item.SubItems[1].Text = "Chưa cấp";
             }
-            cmbQuyen.Visible = false;
         }
-
-        private void lvChucNang_Leave(object sender, EventArgs e)
+        private void CapNhatQuyen(string quyen)
         {
-            cmbQuyen.Visible = false;
+            ListViewItem selectedItem = lvChucNang.FocusedItem;
+
+            if (selectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn chức năng để cấp quyền!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            selectedItem.SubItems[1].Text = quyen;
         }
 
-        private void mnXem_Click(object sender, EventArgs e)
+        private void nmXem_Click(object sender, EventArgs e)
         {
             CapNhatQuyen("Xem");
         }
@@ -207,17 +186,19 @@ namespace QuanLyKhachSan.UI
         {
             CapNhatQuyen("Cấm quyền");
         }
-        private void CapNhatQuyen(string quyen)
+
+        private void lvChucNang_MouseUp(object sender, MouseEventArgs e)
         {
-            ListViewItem selectedItem = lvChucNang.FocusedItem;
-
-            if (selectedItem == null)
+            if (e.Button == MouseButtons.Right)
             {
-                MessageBox.Show("Vui lòng chọn chức năng để cấp quyền!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                var item = lvChucNang.GetItemAt(e.X, e.Y);
+                if (item != null)
+                {
+                    lvChucNang.FocusedItem = item;
+                    item.Selected = true;
+                    contextMenuQuyen.Show(lvChucNang, e.Location);
+                }
             }
-
-            selectedItem.SubItems[1].Text = quyen;
         }
     }
 }

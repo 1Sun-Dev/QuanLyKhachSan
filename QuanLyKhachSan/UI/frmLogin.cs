@@ -46,10 +46,10 @@ namespace QuanLyKhachSan
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            string email = gntxtTaiKhoan.Text.Trim();  // giờ dùng EMAIL làm tài khoản
-            string password = gntxtMatKhau.Text.Trim();
+            string taiKhoan = gntxtTaiKhoan.Text.Trim();  // giờ dùng EMAIL làm tài khoản
+            string matKhau = gntxtMatKhau.Text.Trim();
 
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(taiKhoan) || string.IsNullOrEmpty(matKhau))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ email và mật khẩu.",
                                 "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -61,10 +61,10 @@ namespace QuanLyKhachSan
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "SELECT PASSWORD FROM LOGIN WHERE EMAIL = @Email";
+                    string query = "SELECT MatKhau FROM LOGIN WHERE TaiKhoan = @TaiKhoan";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@Email", email);
+                        cmd.Parameters.AddWithValue("@TaiKhoan", taiKhoan); // dùng biến tài khoản thay vì email
                         object result = cmd.ExecuteScalar();
 
                         if (result != null)
@@ -72,7 +72,7 @@ namespace QuanLyKhachSan
                             string passwordFromDB = result.ToString().Trim();
 
                             // 🔹 So sánh trực tiếp vì DB chưa mã hoá
-                            if (password == passwordFromDB)
+                            if (matKhau == passwordFromDB)
                             {
                                 MessageBox.Show("Đăng nhập thành công!", "Thông báo",
                                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -95,7 +95,7 @@ namespace QuanLyKhachSan
                         }
                         else
                         {
-                            MessageBox.Show("Email không tồn tại.",
+                            MessageBox.Show("Tài khoản không tồn tại.",
                                             "Lỗi Đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }

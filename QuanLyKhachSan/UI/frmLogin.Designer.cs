@@ -23,9 +23,8 @@
             this.gnEliptxtPassWord = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.gntxtMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnLoginUser = new System.Windows.Forms.Panel();
+            this.chkBoxHienMK = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnDangKy = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnDangNhap = new Guna.UI2.WinForms.Guna2GradientButton();
             this.lbMatKhau = new System.Windows.Forms.Label();
             this.lbTaiKhoan = new System.Windows.Forms.Label();
@@ -33,7 +32,6 @@
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.lbX = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.chkBoxHienMK = new System.Windows.Forms.CheckBox();
             this.pnLoginUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -108,8 +106,6 @@
             // 
             this.pnLoginUser.Controls.Add(this.chkBoxHienMK);
             this.pnLoginUser.Controls.Add(this.label1);
-            this.pnLoginUser.Controls.Add(this.btnDangKy);
-            this.pnLoginUser.Controls.Add(this.panel1);
             this.pnLoginUser.Controls.Add(this.gntxtTaiKhoan);
             this.pnLoginUser.Controls.Add(this.btnDangNhap);
             this.pnLoginUser.Controls.Add(this.gntxtMatKhau);
@@ -117,8 +113,20 @@
             this.pnLoginUser.Controls.Add(this.lbTaiKhoan);
             this.pnLoginUser.Location = new System.Drawing.Point(658, 33);
             this.pnLoginUser.Name = "pnLoginUser";
-            this.pnLoginUser.Size = new System.Drawing.Size(483, 632);
+            this.pnLoginUser.Size = new System.Drawing.Size(483, 547);
             this.pnLoginUser.TabIndex = 2;
+            // 
+            // chkBoxHienMK
+            // 
+            this.chkBoxHienMK.AutoSize = true;
+            this.chkBoxHienMK.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkBoxHienMK.Location = new System.Drawing.Point(57, 365);
+            this.chkBoxHienMK.Name = "chkBoxHienMK";
+            this.chkBoxHienMK.Size = new System.Drawing.Size(121, 21);
+            this.chkBoxHienMK.TabIndex = 11;
+            this.chkBoxHienMK.Text = "Hiện mật khẩu";
+            this.chkBoxHienMK.UseVisualStyleBackColor = true;
+            this.chkBoxHienMK.CheckedChanged += new System.EventHandler(this.chkBoxHienMK_CheckedChanged);
             // 
             // label1
             // 
@@ -129,33 +137,6 @@
             this.label1.Size = new System.Drawing.Size(343, 45);
             this.label1.TabIndex = 10;
             this.label1.Text = "Đăng nhập tài khoản";
-            // 
-            // btnDangKy
-            // 
-            this.btnDangKy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnDangKy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDangKy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDangKy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDangKy.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDangKy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDangKy.FillColor = System.Drawing.Color.DarkGray;
-            this.btnDangKy.FillColor2 = System.Drawing.Color.Silver;
-            this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangKy.ForeColor = System.Drawing.Color.White;
-            this.btnDangKy.Location = new System.Drawing.Point(118, 533);
-            this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(290, 75);
-            this.btnDangKy.TabIndex = 9;
-            this.btnDangKy.Text = "Đăng ký";
-            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(29, 509);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(438, 1);
-            this.panel1.TabIndex = 8;
             // 
             // btnDangNhap
             // 
@@ -204,7 +185,6 @@
             // guna2Elipse2
             // 
             this.guna2Elipse2.BorderRadius = 35;
-            this.guna2Elipse2.TargetControl = this.btnDangKy;
             // 
             // lbX
             // 
@@ -228,18 +208,6 @@
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 3;
             this.guna2PictureBox1.TabStop = false;
-            // 
-            // chkBoxHienMK
-            // 
-            this.chkBoxHienMK.AutoSize = true;
-            this.chkBoxHienMK.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkBoxHienMK.Location = new System.Drawing.Point(57, 365);
-            this.chkBoxHienMK.Name = "chkBoxHienMK";
-            this.chkBoxHienMK.Size = new System.Drawing.Size(121, 21);
-            this.chkBoxHienMK.TabIndex = 11;
-            this.chkBoxHienMK.Text = "Hiện mật khẩu";
-            this.chkBoxHienMK.UseVisualStyleBackColor = true;
-            this.chkBoxHienMK.CheckedChanged += new System.EventHandler(this.chkBoxHienMK_CheckedChanged);
             // 
             // frmLogin
             // 
@@ -275,8 +243,6 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private System.Windows.Forms.Label lbX;
-        private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2GradientButton btnDangKy;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox chkBoxHienMK;
     }

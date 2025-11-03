@@ -57,7 +57,6 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.panelTopBar = new Guna.UI2.WinForms.Guna2Panel();
             this.btnMenu = new Guna.UI2.WinForms.Guna2ImageButton(); // <-- THÊM NÚT MENU
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.btnPhanQuyenChucNang = new Guna.UI2.WinForms.Guna2Button();
             this.panelSidebar.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTopBar.SuspendLayout();
@@ -72,7 +71,6 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             // panelSidebar
             // 
             this.panelSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.panelSidebar.Controls.Add(this.btnPhanQuyenChucNang);
             this.panelSidebar.Controls.Add(this.btnDangXuat);
             this.panelSidebar.Controls.Add(this.btnBaoCao);
             this.panelSidebar.Controls.Add(this.btnQLDichVu);
@@ -85,9 +83,8 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.panelSidebar.Controls.Add(this.panelLogo);
             this.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSidebar.Location = new System.Drawing.Point(0, 0);
-            this.panelSidebar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelSidebar.Name = "panelSidebar";
-            this.panelSidebar.Size = new System.Drawing.Size(220, 715);
+            this.panelSidebar.Size = new System.Drawing.Size(220, 720);
             this.panelSidebar.TabIndex = 0;
             // 
             // btnDangXuat
@@ -102,10 +99,10 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.btnDangXuat.ForeColor = System.Drawing.Color.White;
             this.btnDangXuat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDangXuat.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnDangXuat.Location = new System.Drawing.Point(0, 670);
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 675);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnDangXuat.Size = new System.Drawing.Size(293, 55);
+            this.btnDangXuat.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnDangXuat.Size = new System.Drawing.Size(220, 45);
             this.btnDangXuat.TabIndex = 9;
             this.btnDangXuat.Text = "Đăng Xuất";
             this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -123,11 +120,10 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.btnBaoCao.ForeColor = System.Drawing.Color.White;
             this.btnBaoCao.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnBaoCao.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnBaoCao.Location = new System.Drawing.Point(0, 502);
-            this.btnBaoCao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBaoCao.Location = new System.Drawing.Point(0, 410);
             this.btnBaoCao.Name = "btnBaoCao";
-            this.btnBaoCao.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnBaoCao.Size = new System.Drawing.Size(293, 55);
+            this.btnBaoCao.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnBaoCao.Size = new System.Drawing.Size(220, 45);
             this.btnBaoCao.TabIndex = 8;
             this.btnBaoCao.Text = "Báo Cáo";
             this.btnBaoCao.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -145,11 +141,10 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.btnQLDichVu.ForeColor = System.Drawing.Color.White;
             this.btnQLDichVu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQLDichVu.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnQLDichVu.Location = new System.Drawing.Point(0, 447);
-            this.btnQLDichVu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQLDichVu.Location = new System.Drawing.Point(0, 365);
             this.btnQLDichVu.Name = "btnQLDichVu";
-            this.btnQLDichVu.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnQLDichVu.Size = new System.Drawing.Size(293, 55);
+            this.btnQLDichVu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnQLDichVu.Size = new System.Drawing.Size(220, 45);
             this.btnQLDichVu.TabIndex = 7;
             this.btnQLDichVu.Text = "Quản Lý Dịch Vụ";
             this.btnQLDichVu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -167,11 +162,10 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.btnQLNhanVien.ForeColor = System.Drawing.Color.White;
             this.btnQLNhanVien.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQLNhanVien.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnQLNhanVien.Location = new System.Drawing.Point(0, 392);
-            this.btnQLNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQLNhanVien.Location = new System.Drawing.Point(0, 320);
             this.btnQLNhanVien.Name = "btnQLNhanVien";
-            this.btnQLNhanVien.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnQLNhanVien.Size = new System.Drawing.Size(293, 55);
+            this.btnQLNhanVien.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnQLNhanVien.Size = new System.Drawing.Size(220, 45);
             this.btnQLNhanVien.TabIndex = 6;
             this.btnQLNhanVien.Text = "Quản Lý Nhân Viên";
             this.btnQLNhanVien.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -189,11 +183,10 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.btnQLKhachHang.ForeColor = System.Drawing.Color.White;
             this.btnQLKhachHang.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQLKhachHang.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnQLKhachHang.Location = new System.Drawing.Point(0, 337);
-            this.btnQLKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQLKhachHang.Location = new System.Drawing.Point(0, 275);
             this.btnQLKhachHang.Name = "btnQLKhachHang";
-            this.btnQLKhachHang.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnQLKhachHang.Size = new System.Drawing.Size(293, 55);
+            this.btnQLKhachHang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnQLKhachHang.Size = new System.Drawing.Size(220, 45);
             this.btnQLKhachHang.TabIndex = 5;
             this.btnQLKhachHang.Text = "Quản Lý Khách Hàng";
             this.btnQLKhachHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -211,11 +204,10 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.btnQLPhong.ForeColor = System.Drawing.Color.White;
             this.btnQLPhong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQLPhong.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnQLPhong.Location = new System.Drawing.Point(0, 282);
-            this.btnQLPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQLPhong.Location = new System.Drawing.Point(0, 230);
             this.btnQLPhong.Name = "btnQLPhong";
-            this.btnQLPhong.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnQLPhong.Size = new System.Drawing.Size(293, 55);
+            this.btnQLPhong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnQLPhong.Size = new System.Drawing.Size(220, 45);
             this.btnQLPhong.TabIndex = 4;
             this.btnQLPhong.Text = "Quản Lý Phòng";
             this.btnQLPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -233,11 +225,10 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.btnThanhToan.ForeColor = System.Drawing.Color.White;
             this.btnThanhToan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnThanhToan.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnThanhToan.Location = new System.Drawing.Point(0, 227);
-            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThanhToan.Location = new System.Drawing.Point(0, 185);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnThanhToan.Size = new System.Drawing.Size(293, 55);
+            this.btnThanhToan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnThanhToan.Size = new System.Drawing.Size(220, 45);
             this.btnThanhToan.TabIndex = 3;
             this.btnThanhToan.Text = "Thanh Toán";
             this.btnThanhToan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -255,11 +246,10 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.btnDatPhong.ForeColor = System.Drawing.Color.White;
             this.btnDatPhong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDatPhong.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnDatPhong.Location = new System.Drawing.Point(0, 172);
-            this.btnDatPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDatPhong.Location = new System.Drawing.Point(0, 140);
             this.btnDatPhong.Name = "btnDatPhong";
-            this.btnDatPhong.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnDatPhong.Size = new System.Drawing.Size(293, 55);
+            this.btnDatPhong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnDatPhong.Size = new System.Drawing.Size(220, 45);
             this.btnDatPhong.TabIndex = 2;
             this.btnDatPhong.Text = "Đặt / Nhận Phòng";
             this.btnDatPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -277,11 +267,10 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.btnSoDoPhong.ForeColor = System.Drawing.Color.White;
             this.btnSoDoPhong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSoDoPhong.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnSoDoPhong.Location = new System.Drawing.Point(0, 117);
-            this.btnSoDoPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSoDoPhong.Location = new System.Drawing.Point(0, 95);
             this.btnSoDoPhong.Name = "btnSoDoPhong";
-            this.btnSoDoPhong.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnSoDoPhong.Size = new System.Drawing.Size(293, 55);
+            this.btnSoDoPhong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnSoDoPhong.Size = new System.Drawing.Size(220, 45);
             this.btnSoDoPhong.TabIndex = 1;
             this.btnSoDoPhong.Text = "Sơ Đồ Phòng";
             this.btnSoDoPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -292,9 +281,8 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.panelLogo.Controls.Add(this.labelLogo);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(293, 117);
+            this.panelLogo.Size = new System.Drawing.Size(220, 95);
             this.panelLogo.TabIndex = 0;
             // 
             // labelLogo
@@ -303,9 +291,8 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.labelLogo.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLogo.ForeColor = System.Drawing.Color.White;
             this.labelLogo.Location = new System.Drawing.Point(0, 0);
-            this.labelLogo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelLogo.Name = "labelLogo";
-            this.labelLogo.Size = new System.Drawing.Size(293, 117);
+            this.labelLogo.Size = new System.Drawing.Size(220, 95);
             this.labelLogo.TabIndex = 0;
             this.labelLogo.Text = "KHÁCH SẠN ABC";
             this.labelLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -313,26 +300,10 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             // panelContainer
             // 
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(293, 37);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelContainer.Location = new System.Drawing.Point(220, 30);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1060, 685);
+            this.panelContainer.Size = new System.Drawing.Size(1060, 690);
             this.panelContainer.TabIndex = 1;
-            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
-            // 
-            // panelTopBar
-            // 
-            this.panelTopBar.BackColor = System.Drawing.Color.White;
-            this.panelTopBar.Controls.Add(this.guna2ControlBoxMin);
-            this.panelTopBar.Controls.Add(this.guna2ControlBoxMax);
-            this.panelTopBar.Controls.Add(this.guna2ControlBoxClose);
-            this.panelTopBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTopBar.Location = new System.Drawing.Point(220, 0);
-            this.panelTopBar.Name = "panelTopBar";
-            this.panelTopBar.ShadowDecoration.Depth = 5;
-            this.panelTopBar.ShadowDecoration.Enabled = true;
-            this.panelTopBar.Size = new System.Drawing.Size(1060, 30);
-            this.panelTopBar.TabIndex = 2;
             // 
             // guna2ControlBoxMin
             // 
@@ -340,10 +311,9 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.guna2ControlBoxMin.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.guna2ControlBoxMin.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBoxMin.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBoxMin.Location = new System.Drawing.Point(1234, 0);
-            this.guna2ControlBoxMin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ControlBoxMin.Location = new System.Drawing.Point(925, 0);
             this.guna2ControlBoxMin.Name = "guna2ControlBoxMin";
-            this.guna2ControlBoxMin.Size = new System.Drawing.Size(60, 36);
+            this.guna2ControlBoxMin.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBoxMin.TabIndex = 2;
             // 
             // guna2ControlBoxMax
@@ -352,10 +322,9 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.guna2ControlBoxMax.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
             this.guna2ControlBoxMax.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBoxMax.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBoxMax.Location = new System.Drawing.Point(1294, 0);
-            this.guna2ControlBoxMax.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ControlBoxMax.Location = new System.Drawing.Point(970, 0);
             this.guna2ControlBoxMax.Name = "guna2ControlBoxMax";
-            this.guna2ControlBoxMax.Size = new System.Drawing.Size(60, 36);
+            this.guna2ControlBoxMax.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBoxMax.TabIndex = 1;
             // 
             // guna2ControlBoxClose
@@ -365,10 +334,9 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.guna2ControlBoxClose.HoverState.FillColor = System.Drawing.Color.Red;
             this.guna2ControlBoxClose.HoverState.IconColor = System.Drawing.Color.White;
             this.guna2ControlBoxClose.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBoxClose.Location = new System.Drawing.Point(1354, 0);
-            this.guna2ControlBoxClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ControlBoxClose.Location = new System.Drawing.Point(1015, 0);
             this.guna2ControlBoxClose.Name = "guna2ControlBoxClose";
-            this.guna2ControlBoxClose.Size = new System.Drawing.Size(60, 36);
+            this.guna2ControlBoxClose.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBoxClose.TabIndex = 0;
             // 
             // panelTopBar
@@ -391,7 +359,6 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.btnMenu.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnMenu.HoverState.ImageSize = new System.Drawing.Size(24, 24);
-            
             this.btnMenu.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnMenu.ImageRotate = 0F;
             this.btnMenu.ImageSize = new System.Drawing.Size(20, 20);
@@ -409,38 +376,16 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.guna2DragControl1.TransparentWhileDrag = true;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
-            // btnPhanQuyenChucNang
-            // 
-            this.btnPhanQuyenChucNang.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnPhanQuyenChucNang.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnPhanQuyenChucNang.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPhanQuyenChucNang.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPhanQuyenChucNang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPhanQuyenChucNang.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnPhanQuyenChucNang.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnPhanQuyenChucNang.ForeColor = System.Drawing.Color.White;
-            this.btnPhanQuyenChucNang.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnPhanQuyenChucNang.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnPhanQuyenChucNang.Location = new System.Drawing.Point(0, 557);
-            this.btnPhanQuyenChucNang.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPhanQuyenChucNang.Name = "btnPhanQuyenChucNang";
-            this.btnPhanQuyenChucNang.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnPhanQuyenChucNang.Size = new System.Drawing.Size(293, 55);
-            this.btnPhanQuyenChucNang.TabIndex = 10;
-            this.btnPhanQuyenChucNang.Text = "Phân quyền chức năng";
-            this.btnPhanQuyenChucNang.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1280, 715);
+            this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panelTopBar);
             this.Controls.Add(this.panelSidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Khách Sạn";
@@ -473,5 +418,6 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBoxMax;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBoxClose;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private Guna.UI2.WinForms.Guna2ImageButton btnMenu; // <-- KHAI BÁO NÚT MENU
     }
 }
