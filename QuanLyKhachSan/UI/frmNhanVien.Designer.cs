@@ -66,10 +66,12 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.guna2Panel1.Size = new System.Drawing.Size(984, 561); // Kích thước form ví dụ
+            this.guna2Panel1.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.guna2Panel1.Size = new System.Drawing.Size(1476, 863);
             this.guna2Panel1.TabIndex = 0;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // guna2GroupBox2
             // 
@@ -77,9 +79,10 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.guna2GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox2.Location = new System.Drawing.Point(10, 215); // Nằm dưới GroupBox1
+            this.guna2GroupBox2.Location = new System.Drawing.Point(15, 315);
+            this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(964, 336);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(1446, 533);
             this.guna2GroupBox2.TabIndex = 1;
             this.guna2GroupBox2.Text = "Danh sách Nhân viên";
             // 
@@ -90,8 +93,8 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.dgvNhanVien.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvNhanVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -105,26 +108,44 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F); // Font nội dung
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvNhanVien.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNhanVien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvNhanVien.Location = new System.Drawing.Point(3, 43);
+            this.dgvNhanVien.Location = new System.Drawing.Point(4, 66);
+            this.dgvNhanVien.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.ReadOnly = true;
             this.dgvNhanVien.RowHeadersVisible = false;
+            this.dgvNhanVien.RowHeadersWidth = 62;
             this.dgvNhanVien.RowTemplate.Height = 24;
-            this.dgvNhanVien.Size = new System.Drawing.Size(958, 290);
+            this.dgvNhanVien.Size = new System.Drawing.Size(1437, 462);
             this.dgvNhanVien.TabIndex = 0;
             this.dgvNhanVien.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            // ... (ThemeStyle properties)
+            this.dgvNhanVien.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvNhanVien.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvNhanVien.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvNhanVien.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvNhanVien.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvNhanVien.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvNhanVien.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvNhanVien.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvNhanVien.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvNhanVien.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvNhanVien.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvNhanVien.ThemeStyle.HeaderStyle.Height = 22;
             this.dgvNhanVien.ThemeStyle.ReadOnly = true;
+            this.dgvNhanVien.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvNhanVien.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvNhanVien.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvNhanVien.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvNhanVien.ThemeStyle.RowsStyle.Height = 24;
-            this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick); // Gán sự kiện
+            this.dgvNhanVien.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvNhanVien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
             // 
             // guna2GroupBox1
             // 
@@ -143,9 +164,10 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(10, 10);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(15, 15);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(964, 195); // Chiều cao group thông tin
+            this.guna2GroupBox1.Size = new System.Drawing.Size(1446, 300);
             this.guna2GroupBox1.TabIndex = 0;
             this.guna2GroupBox1.Text = "Thông tin Nhân viên";
             // 
@@ -154,9 +176,10 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.btnLamMoi.BorderRadius = 5;
             this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoi.Location = new System.Drawing.Point(744, 142);
+            this.btnLamMoi.Location = new System.Drawing.Point(1116, 218);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(120, 35);
+            this.btnLamMoi.Size = new System.Drawing.Size(180, 54);
             this.btnLamMoi.TabIndex = 12;
             this.btnLamMoi.Text = "Làm Mới";
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
@@ -166,9 +189,10 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.btnXoa.BorderRadius = 5;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(618, 142);
+            this.btnXoa.Location = new System.Drawing.Point(927, 218);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(120, 35);
+            this.btnXoa.Size = new System.Drawing.Size(180, 54);
             this.btnXoa.TabIndex = 11;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -178,9 +202,10 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.btnSua.BorderRadius = 5;
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(492, 142);
+            this.btnSua.Location = new System.Drawing.Point(738, 218);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(120, 35);
+            this.btnSua.Size = new System.Drawing.Size(180, 54);
             this.btnSua.TabIndex = 10;
             this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -190,9 +215,10 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.btnThem.BorderRadius = 5;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(366, 142);
+            this.btnThem.Location = new System.Drawing.Point(549, 218);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(120, 35);
+            this.btnThem.Size = new System.Drawing.Size(180, 54);
             this.btnThem.TabIndex = 9;
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -202,12 +228,12 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.txtLuong.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtLuong.DefaultText = "";
             this.txtLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtLuong.Location = new System.Drawing.Point(744, 98);
+            this.txtLuong.Location = new System.Drawing.Point(1116, 151);
+            this.txtLuong.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtLuong.Name = "txtLuong";
-            this.txtLuong.PasswordChar = '\0';
             this.txtLuong.PlaceholderText = "Lương";
             this.txtLuong.SelectedText = "";
-            this.txtLuong.Size = new System.Drawing.Size(196, 36);
+            this.txtLuong.Size = new System.Drawing.Size(294, 55);
             this.txtLuong.TabIndex = 8;
             // 
             // txtChucVu
@@ -215,12 +241,12 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.txtChucVu.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtChucVu.DefaultText = "";
             this.txtChucVu.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtChucVu.Location = new System.Drawing.Point(528, 98);
+            this.txtChucVu.Location = new System.Drawing.Point(792, 151);
+            this.txtChucVu.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtChucVu.Name = "txtChucVu";
-            this.txtChucVu.PasswordChar = '\0';
             this.txtChucVu.PlaceholderText = "Chức vụ";
             this.txtChucVu.SelectedText = "";
-            this.txtChucVu.Size = new System.Drawing.Size(210, 36);
+            this.txtChucVu.Size = new System.Drawing.Size(315, 55);
             this.txtChucVu.TabIndex = 7;
             // 
             // txtDiaChi
@@ -228,12 +254,12 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.txtDiaChi.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDiaChi.DefaultText = "";
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtDiaChi.Location = new System.Drawing.Point(267, 98);
+            this.txtDiaChi.Location = new System.Drawing.Point(400, 151);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.PasswordChar = '\0';
             this.txtDiaChi.PlaceholderText = "Địa chỉ";
             this.txtDiaChi.SelectedText = "";
-            this.txtDiaChi.Size = new System.Drawing.Size(255, 36);
+            this.txtDiaChi.Size = new System.Drawing.Size(382, 55);
             this.txtDiaChi.TabIndex = 6;
             // 
             // txtSDT
@@ -241,12 +267,12 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.txtSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSDT.DefaultText = "";
             this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSDT.Location = new System.Drawing.Point(14, 98);
+            this.txtSDT.Location = new System.Drawing.Point(21, 151);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.PasswordChar = '\0';
             this.txtSDT.PlaceholderText = "Số điện thoại";
             this.txtSDT.SelectedText = "";
-            this.txtSDT.Size = new System.Drawing.Size(247, 36);
+            this.txtSDT.Size = new System.Drawing.Size(370, 55);
             this.txtSDT.TabIndex = 5;
             // 
             // dtpNgaySinh
@@ -254,12 +280,13 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.dtpNgaySinh.Checked = true;
             this.dtpNgaySinh.FillColor = System.Drawing.Color.White;
             this.dtpNgaySinh.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short; // Dùng format ngắn
-            this.dtpNgaySinh.Location = new System.Drawing.Point(528, 56);
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(792, 86);
+            this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpNgaySinh.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNgaySinh.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(210, 36);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(315, 55);
             this.dtpNgaySinh.TabIndex = 4;
             this.dtpNgaySinh.Value = new System.DateTime(2025, 10, 24, 0, 0, 0, 0);
             // 
@@ -276,9 +303,10 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.cboGioiTinh.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cboGioiTinh.Location = new System.Drawing.Point(744, 56);
+            this.cboGioiTinh.Location = new System.Drawing.Point(1116, 86);
+            this.cboGioiTinh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboGioiTinh.Name = "cboGioiTinh";
-            this.cboGioiTinh.Size = new System.Drawing.Size(196, 36);
+            this.cboGioiTinh.Size = new System.Drawing.Size(292, 36);
             this.cboGioiTinh.TabIndex = 3;
             // 
             // txtHoTen
@@ -286,12 +314,12 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.txtHoTen.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtHoTen.DefaultText = "";
             this.txtHoTen.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtHoTen.Location = new System.Drawing.Point(267, 56);
+            this.txtHoTen.Location = new System.Drawing.Point(400, 86);
+            this.txtHoTen.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.PasswordChar = '\0';
             this.txtHoTen.PlaceholderText = "Họ tên";
             this.txtHoTen.SelectedText = "";
-            this.txtHoTen.Size = new System.Drawing.Size(255, 36);
+            this.txtHoTen.Size = new System.Drawing.Size(382, 55);
             this.txtHoTen.TabIndex = 2;
             // 
             // txtMaNV
@@ -299,28 +327,28 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.txtMaNV.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMaNV.DefaultText = "";
             this.txtMaNV.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtMaNV.Location = new System.Drawing.Point(14, 56);
+            this.txtMaNV.Location = new System.Drawing.Point(21, 86);
+            this.txtMaNV.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.PasswordChar = '\0';
             this.txtMaNV.PlaceholderText = "Mã nhân viên";
             this.txtMaNV.SelectedText = "";
-            this.txtMaNV.Size = new System.Drawing.Size(247, 36);
+            this.txtMaNV.Size = new System.Drawing.Size(370, 55);
             this.txtMaNV.TabIndex = 1;
             // 
             // guna2DragControl1
             // 
             this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2DragControl1.TargetControl = this;
-            this.guna2DragControl1.TransparentWhileDrag = true;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
             // frmNhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 561); // Kích thước form
+            this.ClientSize = new System.Drawing.Size(1476, 863);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Nhân Viên";

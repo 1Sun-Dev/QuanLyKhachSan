@@ -103,5 +103,10 @@ namespace QuanLyKhachSan
                 txtLuong.Text = row.Cells["Luong"].Value.ToString();
             }
         }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

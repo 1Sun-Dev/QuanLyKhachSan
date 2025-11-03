@@ -93,6 +93,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCapNhatDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCapNhatDichVu.Designer.cs">
+      <DependentUpon>frmCapNhatDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChuyenPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChuyenPhong.Designer.cs">
+      <DependentUpon>frmChuyenPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202510251449064_InitialCreate.cs" />
     <Compile Include="Migrations\202510251449064_InitialCreate.Designer.cs">
       <DependentUpon>202510251449064_InitialCreate.cs</DependentUpon>
@@ -200,11 +212,23 @@
     <Compile Include="UI\frmThuKhacTT.Designer.cs">
       <DependentUpon>frmThuKhacTT.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmCapNhatDichVu.resx">
+      <DependentUpon>frmCapNhatDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChuyenPhong.resx">
+      <DependentUpon>frmChuyenPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202510251449064_InitialCreate.resx">
       <DependentUpon>202510251449064_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmDanhSachPhong.resx">
+      <DependentUpon>frmDanhSachPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmPhanQuyenNhanVien.resx">
       <DependentUpon>frmPhanQuyenNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmQuanLyDichVu.resx">
+      <DependentUpon>frmQuanLyDichVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmViewerBaoCao.resx">
       <DependentUpon>frmViewerBaoCao.cs</DependentUpon>

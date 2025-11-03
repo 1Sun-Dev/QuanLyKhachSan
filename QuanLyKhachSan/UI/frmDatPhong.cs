@@ -686,5 +686,10 @@ namespace QuanLyKhachSan
         {
 
         }
+
+        private void panelDichVu_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
