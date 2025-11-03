@@ -12,7 +12,7 @@ namespace QuanLyKhachSan
     public partial class frmLogin : Form
     {
         private readonly string connectionString =
-          @"Data Source=Phuc-ne;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+          @"Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         public frmLogin()
         {
             InitializeComponent();
@@ -32,17 +32,7 @@ namespace QuanLyKhachSan
                 btnDangNhap_Click(sender, e);
         }
 
-        private string HashPassword(string password)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-                StringBuilder builder = new StringBuilder();
-                foreach (byte b in bytes)
-                    builder.Append(b.ToString("x2"));
-                return builder.ToString();
-            }
-        }
+       
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
@@ -118,7 +108,7 @@ namespace QuanLyKhachSan
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            frmDangKy dk = new frmDangKy();
+            frmDangKyTaiKhoan dk = new frmDangKyTaiKhoan();
             dk.ShowDialog();
             this.Hide();
         }

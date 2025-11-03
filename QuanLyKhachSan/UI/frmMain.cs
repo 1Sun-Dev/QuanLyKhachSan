@@ -108,9 +108,22 @@ namespace QuanLyKhachSan
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.DialogResult = DialogResult.OK;
-                this.Close();
+                this.Hide();
+                frmLogin frmLogin = new frmLogin();
+                frmLogin.Show();
             }
         }
         #endregion
+
+        private void menuBaoCao_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+           frmDangKyTaiKhoan dk = new frmDangKyTaiKhoan();
+              dk.ShowDialog();
+        }
     }
 }

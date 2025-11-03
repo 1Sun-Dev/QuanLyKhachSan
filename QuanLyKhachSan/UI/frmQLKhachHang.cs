@@ -10,7 +10,7 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
     {
         // 1. Chuỗi kết nối
         private string connectionString =
-         @"Data Source=Phuc-ne;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+         @"Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
         public frmQLKhachHang()
         {
@@ -32,7 +32,11 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT MaKH, HoTen, SDT, CCCD_HoChieu, Email, LoaiKH, DiemTichLuy FROM KhachHang";
+                    string query = @"
+    SELECT MaKH, HoTen, SDT, CCCD_HoChieu, Email, LoaiKH, DiemTichLuy 
+    FROM KhachHang 
+    WHERE TrangThai = N'Hoạt động'";
+
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -89,7 +93,10 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
                 txtCCCD.Text = row.Cells["CCCD_HoChieu"].Value?.ToString();
                 txtEmail.Text = row.Cells["Email"].Value?.ToString();
                 cmbLoaiKH.SelectedItem = row.Cells["LoaiKH"].Value?.ToString();
-                spinDiemTichLuy.Value = Convert.ToDecimal(row.Cells["DiemTichLuy"].Value ?? 0);
+                if (row.Cells["DiemTichLuy"].Value == DBNull.Value)
+                    spinDiemTichLuy.Value = 0;
+                else
+                    spinDiemTichLuy.Value = Convert.ToDecimal(row.Cells["DiemTichLuy"].Value);
 
                 // Khóa Mã KH và bật nút Sửa/Xóa
                 txtMaKH.ReadOnly = true;
@@ -204,18 +211,23 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
         }
 
         // Nút Xóa
+        // (Trong frmQLKhachHang.cs)
+
+        // Hàm sự kiện cho nút Xóa
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtMaKH.Text) || txtMaKH.ReadOnly == false)
             {
-                MessageBox.Show("Vui lòng chọn khách hàng cần xóa.", "Chưa chọn khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn một khách hàng từ lưới để xóa.",
+                                "Chưa chọn khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (MessageBox.Show($"Bạn có chắc chắn muốn xóa khách hàng '{txtHoTen.Text}' (Mã: {txtMaKH.Text}) không?",
-                                     "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show($"Bạn có chắc chắn muốn ngừng hoạt động khách hàng '{txtHoTen.Text}' (Mã: {txtMaKH.Text}) không?",
+                                 "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                string query = "DELETE FROM KhachHang WHERE MaKH = @MaKH";
+                string query = "UPDATE KhachHang SET TrangThai = N'Ngưng hoạt động' WHERE MaKH = @MaKH";
+
                 try
                 {
                     using (SqlConnection conn = new SqlConnection(connectionString))
@@ -227,20 +239,19 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
                             cmd.ExecuteNonQuery();
                         }
                     }
-                    MessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Khách hàng đã được chuyển sang trạng thái 'Ngưng hoạt động'.",
+                                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadGridData();
                     ClearForm();
                 }
-                catch (SqlException sqlex) when (sqlex.Number == 547) // Lỗi khóa ngoại
-                {
-                    MessageBox.Show("Không thể xóa khách hàng này vì đang được tham chiếu (ví dụ: trong một phiếu thuê phòng).", "Lỗi Khóa Ngoại", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi xóa khách hàng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi khi cập nhật trạng thái khách hàng: " + ex.Message,
+                                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
 
         #endregion
 

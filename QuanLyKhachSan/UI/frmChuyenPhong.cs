@@ -11,7 +11,7 @@ namespace QuanLyKhachSan
     public partial class frmChuyenPhong : Form
     {
         private string connectionString =
-            @"Data Source=Phuc-ne;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+            @"Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
         // Biến lưu thông tin được truyền từ frmSoDoPhong
         private string currentMaPTP;

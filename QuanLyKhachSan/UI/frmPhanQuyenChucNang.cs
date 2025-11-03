@@ -13,7 +13,7 @@ namespace QuanLyKhachSan.UI
 {
     public partial class frmPhanQuyenChucNang : Form
     {
-        private string connectionString = @"Data Source=Phuc-ne;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        private string connectionString = @"Data Source=admin;Initial Catalog=QuanLyKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         public frmPhanQuyenChucNang()
         {
             InitializeComponent();
