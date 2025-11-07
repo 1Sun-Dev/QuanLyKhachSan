@@ -19,6 +19,7 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
 
         private void frmQLKhachHang_Load(object sender, EventArgs e)
         {
+            spinDiemTichLuy.Maximum = 10000;
             LoadGridData();
             ClearForm();
         }
@@ -33,9 +34,10 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     string query = @"
-    SELECT MaKH, HoTen, SDT, CCCD_HoChieu, Email, LoaiKH, DiemTichLuy 
-    FROM KhachHang 
-    WHERE TrangThai = N'Hoạt động'";
+                    SELECT MaKH, HoTen, SDT, CCCD_HoChieu, Email, LoaiKH, DiemTichLuy, TrangThai 
+                    FROM KhachHang 
+                    WHERE TrangThai IS NULL OR TrangThai IN (N'Hoạt động', N'Ngưng hoạt động')";
+
 
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
                     DataTable dt = new DataTable();

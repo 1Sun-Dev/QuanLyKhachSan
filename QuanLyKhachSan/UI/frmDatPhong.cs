@@ -47,6 +47,8 @@ namespace QuanLyKhachSan
             dtPhongDaChon = new DataTable();
             dtPhongDaChon.Columns.Add("MaPhong", typeof(string));
             dtPhongDaChon.Columns.Add("SoPhong", typeof(string));
+            dtPhongDaChon.Columns.Add("TenLP", typeof(string)); 
+            dtPhongDaChon.Columns.Add("TANG", typeof(int));
             dtPhongDaChon.Columns.Add("DonGia", typeof(decimal));
             dtPhongDaChon.Columns.Add("SoNgay", typeof(int));
             dtPhongDaChon.Columns.Add("ThanhTien", typeof(decimal), "DonGia * SoNgay");
@@ -330,10 +332,25 @@ namespace QuanLyKhachSan
                 DataRow newRow = dtPhongDaChon.NewRow();
                 newRow["MaPhong"] = maPhong;
                 newRow["SoPhong"] = drv["SoPhong"];
+                newRow["TenLP"] = drv["TenLP"];    // 👈 Lưu loại phòng
+                newRow["TANG"] = drv["TANG"];      // 👈 Lưu tầng
                 newRow["DonGia"] = drv["DonGia"];
                 newRow["SoNgay"] = 1; // Mặc định 1 ngày
                 dtPhongDaChon.Rows.Add(newRow);
 
+                // ✅ Xóa phòng đó khỏi danh sách phòng trống
+                DataTable dtPhongTrong = (DataTable)gridPhongTrong.DataSource;
+                DataRow rowToRemove = dtPhongTrong.AsEnumerable()
+                    .FirstOrDefault(r => r["MaPhong"].ToString() == maPhong);
+                if (rowToRemove != null)
+                {
+                    dtPhongTrong.Rows.Remove(rowToRemove);
+                }
+
+                // Cập nhật lại lưới
+                gridPhongTrong.DataSource = dtPhongTrong;
+
+                // Tính lại tổng tiền
                 CalculateAll();
             }
             catch (Exception ex)
@@ -389,19 +406,47 @@ namespace QuanLyKhachSan
         private void gridPhongDaChon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var grid = (Guna2DataGridView)sender;
+
             if (e.RowIndex >= 0 && grid.Columns["colXoa"] != null && e.ColumnIndex == grid.Columns["colXoa"].Index)
             {
                 try
                 {
-                    dtPhongDaChon.Rows[e.RowIndex].Delete();
+                    // ✅ Lấy thông tin phòng bị xóa
+                    DataRow rowPhong = ((DataRowView)grid.Rows[e.RowIndex].DataBoundItem).Row;
+
+                    string maPhong = rowPhong["MaPhong"].ToString();
+                    string soPhong = rowPhong["SoPhong"].ToString();
+                    string tenLP = rowPhong["TenLP"].ToString();
+                    int tang = Convert.ToInt32(rowPhong["TANG"]);
+                    decimal donGia = Convert.ToDecimal(rowPhong["DonGia"]);
+
+                    // ✅ Trả lại phòng vào danh sách phòng trống
+                    DataTable dtPhongTrong = (DataTable)gridPhongTrong.DataSource;
+                    DataRow newRow = dtPhongTrong.NewRow();
+                    newRow["MaPhong"] = maPhong;
+                    newRow["SoPhong"] = soPhong;
+                    newRow["TenLP"] = tenLP;
+                    newRow["TANG"] = tang;
+                    newRow["DonGia"] = donGia;
+                    dtPhongTrong.Rows.Add(newRow);
+
+                    // ✅ Xóa khỏi danh sách đã chọn
+                    dtPhongDaChon.Rows.Remove(rowPhong);
+
+                    // Sắp xếp lại danh sách phòng trống theo tầng và số phòng
+                    DataView dv = dtPhongTrong.DefaultView;
+                    dv.Sort = "TANG, SoPhong";
+                    gridPhongTrong.DataSource = dv.ToTable();
+
                     CalculateAll();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi xóa phòng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi khi xóa phòng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
 
         // Click nút Xóa trên lưới Dịch vụ đã dùng
         private void gridDichVuDaDung_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -411,14 +456,35 @@ namespace QuanLyKhachSan
             {
                 try
                 {
-                    dtDichVuDaDung.Rows[e.RowIndex].Delete();
+                    // Lấy thông tin phòng bị xóa
+                    string maPhong = dtPhongDaChon.Rows[e.RowIndex]["MaPhong"].ToString();
+                    string soPhong = dtPhongDaChon.Rows[e.RowIndex]["SoPhong"].ToString();
+                    decimal donGia = Convert.ToDecimal(dtPhongDaChon.Rows[e.RowIndex]["DonGia"]);
+
+                    // ✅ Thêm lại vào danh sách phòng trống
+                    DataTable dtPhongTrong = (DataTable)gridPhongTrong.DataSource;
+                    DataRow newRow = dtPhongTrong.NewRow();
+                    newRow["MaPhong"] = maPhong;
+                    newRow["SoPhong"] = soPhong;
+                    newRow["DonGia"] = donGia;
+                    // Nếu có cột tầng hoặc loại phòng thì có thể thêm vào đây:
+                    // newRow["TANG"] = ...
+                    dtPhongTrong.Rows.Add(newRow);
+
+                    // Xóa khỏi danh sách đã chọn
+                    dtPhongDaChon.Rows[e.RowIndex].Delete();
+
+                    // Cập nhật lại lưới
+                    gridPhongTrong.DataSource = dtPhongTrong;
+
                     CalculateAll();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi xóa dịch vụ: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi xóa phòng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
         }
 
         // Thay đổi ngày

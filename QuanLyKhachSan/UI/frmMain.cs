@@ -8,11 +8,28 @@ using System.Windows.Forms;
 
 namespace QuanLyKhachSan
 {
-    // Kế thừa từ Guna2BorderlessForm
+   
+
     public partial class frmMain : Form
     {
         private Form activeForm = null;
+        private Guna2Button currentButton = null;
+        private void ActivateButton(Guna2Button button)
+        {
+            if (button == null) return;
 
+            // Reset màu của nút cũ
+            if (currentButton != null)
+            {
+                currentButton.FillColor = Color.FromArgb(45, 45, 48); // Màu gốc sidebar
+                currentButton.ForeColor = Color.White;
+            }
+
+            // Đặt màu nổi bật cho nút hiện tại
+            currentButton = button;
+            currentButton.FillColor = Color.FromArgb(0, 122, 204); // Xanh dương nhạt highlight
+            currentButton.ForeColor = Color.White;
+        }
         public frmMain()
         {
             InitializeComponent();
@@ -20,7 +37,7 @@ namespace QuanLyKhachSan
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            // Mở form Sơ đồ phòng mặc định
+            ActivateButton(sender as Guna2Button);
             OpenChildForm(new frmSoDoPhong());
         }
 
@@ -70,37 +87,40 @@ namespace QuanLyKhachSan
 
         private void btnSoDoPhong_Click(object sender, EventArgs e)
         {
+            ActivateButton((Guna2Button)sender);
             OpenChildForm(new frmSoDoPhong());
         }
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
+            ActivateButton((Guna2Button)sender);
             OpenChildForm(new frmDatPhong());
         }
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
+            ActivateButton((Guna2Button)sender);
             OpenChildForm(new frmThanhToan());
         }
         private void btnQLPhong_Click(object sender, EventArgs e)
         {
+            ActivateButton((Guna2Button)sender);
             OpenChildForm(new frmDanhSachPhong());
         }
         private void btnQLKhachHang_Click(object sender, EventArgs e)
         {
+            ActivateButton((Guna2Button)sender);
             OpenChildForm(new frmQLKhachHang());
         }
         private void btnQLNhanVien_Click(object sender, EventArgs e)
         {
+            ActivateButton((Guna2Button)sender);
             OpenChildForm(new frmNhanVien());
         }
         private void btnQLDichVu_Click(object sender, EventArgs e)
         {
+            ActivateButton((Guna2Button)sender);
             OpenChildForm(new frmQuanLyDichVu());
         }
-        private void btnBaoCao_Click(object sender, EventArgs e)
-        {
-            // Mở form báo cáo (rdlc)
-            OpenChildForm(new frmViewerBaoCao());
-        }
+      
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
@@ -120,10 +140,35 @@ namespace QuanLyKhachSan
 
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+       
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
         {
-           frmDangKyTaiKhoan dk = new frmDangKyTaiKhoan();
-              dk.ShowDialog();
+                ActivateButton((Guna2Button)sender);
+                OpenChildForm(new frmBaoCaoDoanhThu());
+        }
+
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnBaoCao_Click_1(object sender, EventArgs e)
+        {
+            ActivateButton((Guna2Button)sender);
+            OpenChildForm(new frmViewerBaoCao());
+
+        }
+
+        private void btnDK_Click(object sender, EventArgs e)
+        {
+            frmDangKyTaiKhoan dk = new frmDangKyTaiKhoan();
+            dk.ShowDialog();
+        }
+
+        private void guna2ControlBoxClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

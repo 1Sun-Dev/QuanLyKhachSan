@@ -39,6 +39,9 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.components = new System.ComponentModel.Container();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.panelSidebar = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnDK = new Guna.UI2.WinForms.Guna2Button();
+            this.btnBaoCao = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLDichVu = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLNhanVien = new Guna.UI2.WinForms.Guna2Button();
@@ -56,8 +59,6 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.panelTopBar = new Guna.UI2.WinForms.Guna2Panel();
             this.btnMenu = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.btnBaoCao = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDK = new Guna.UI2.WinForms.Guna2Button();
             this.panelSidebar.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTopBar.SuspendLayout();
@@ -73,8 +74,9 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             // 
             this.panelSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.panelSidebar.Controls.Add(this.btnDK);
-            this.panelSidebar.Controls.Add(this.btnDangXuat);
             this.panelSidebar.Controls.Add(this.btnBaoCao);
+            this.panelSidebar.Controls.Add(this.guna2Button1);
+            this.panelSidebar.Controls.Add(this.btnDangXuat);
             this.panelSidebar.Controls.Add(this.btnQLDichVu);
             this.panelSidebar.Controls.Add(this.btnQLNhanVien);
             this.panelSidebar.Controls.Add(this.btnQLKhachHang);
@@ -87,8 +89,74 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.panelSidebar.Location = new System.Drawing.Point(0, 0);
             this.panelSidebar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelSidebar.Name = "panelSidebar";
-            this.panelSidebar.Size = new System.Drawing.Size(330, 1106);
+            this.panelSidebar.Size = new System.Drawing.Size(330, 1100);
             this.panelSidebar.TabIndex = 0;
+            // 
+            // btnDK
+            // 
+            this.btnDK.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDK.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDK.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.btnDK.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnDK.ForeColor = System.Drawing.Color.White;
+            this.btnDK.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDK.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnDK.Location = new System.Drawing.Point(0, 752);
+            this.btnDK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDK.Name = "btnDK";
+            this.btnDK.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnDK.Size = new System.Drawing.Size(330, 75);
+            this.btnDK.TabIndex = 13;
+            this.btnDK.Text = "Đăng Ký Tài Khoản";
+            this.btnDK.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDK.Click += new System.EventHandler(this.btnDK_Click);
+            // 
+            // btnBaoCao
+            // 
+            this.btnBaoCao.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBaoCao.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBaoCao.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBaoCao.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBaoCao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBaoCao.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.btnBaoCao.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnBaoCao.ForeColor = System.Drawing.Color.White;
+            this.btnBaoCao.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBaoCao.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnBaoCao.Location = new System.Drawing.Point(0, 698);
+            this.btnBaoCao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBaoCao.Name = "btnBaoCao";
+            this.btnBaoCao.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnBaoCao.Size = new System.Drawing.Size(330, 54);
+            this.btnBaoCao.TabIndex = 12;
+            this.btnBaoCao.Text = "Báo Cáo Khách Hàng";
+            this.btnBaoCao.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click_1);
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.ImageOffset = new System.Drawing.Point(10, 0);
+            this.guna2Button1.Location = new System.Drawing.Point(0, 629);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.guna2Button1.Size = new System.Drawing.Size(330, 69);
+            this.guna2Button1.TabIndex = 11;
+            this.guna2Button1.Text = "Báo Cáo Doanh Thu";
+            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
             // 
             // btnDangXuat
             // 
@@ -102,7 +170,7 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.btnDangXuat.ForeColor = System.Drawing.Color.White;
             this.btnDangXuat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDangXuat.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnDangXuat.Location = new System.Drawing.Point(0, 1037);
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 1031);
             this.btnDangXuat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
@@ -286,7 +354,7 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.labelLogo.Name = "labelLogo";
             this.labelLogo.Size = new System.Drawing.Size(330, 146);
             this.labelLogo.TabIndex = 0;
-            this.labelLogo.Text = "KHÁCH SẠN ABC";
+            this.labelLogo.Text = "KHÁCH SẠN ";
             this.labelLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelContainer
@@ -295,8 +363,9 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.panelContainer.Location = new System.Drawing.Point(330, 46);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1590, 1060);
+            this.panelContainer.Size = new System.Drawing.Size(1590, 1054);
             this.panelContainer.TabIndex = 1;
+            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
             // guna2ControlBoxMin
             // 
@@ -334,6 +403,7 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.guna2ControlBoxClose.Name = "guna2ControlBoxClose";
             this.guna2ControlBoxClose.Size = new System.Drawing.Size(68, 45);
             this.guna2ControlBoxClose.TabIndex = 0;
+            this.guna2ControlBoxClose.Click += new System.EventHandler(this.guna2ControlBoxClose_Click);
             // 
             // panelTopBar
             // 
@@ -374,56 +444,12 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
             this.guna2DragControl1.TargetControl = this.panelTopBar;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
-            // btnBaoCao
-            // 
-            this.btnBaoCao.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBaoCao.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBaoCao.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBaoCao.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBaoCao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBaoCao.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnBaoCao.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnBaoCao.ForeColor = System.Drawing.Color.White;
-            this.btnBaoCao.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnBaoCao.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnBaoCao.Location = new System.Drawing.Point(0, 629);
-            this.btnBaoCao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnBaoCao.Name = "btnBaoCao";
-            this.btnBaoCao.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnBaoCao.Size = new System.Drawing.Size(330, 69);
-            this.btnBaoCao.TabIndex = 8;
-            this.btnBaoCao.Text = "Báo Cáo";
-            this.btnBaoCao.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click);
-            // 
-            // btnDK
-            // 
-            this.btnDK.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDK.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDK.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.btnDK.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnDK.ForeColor = System.Drawing.Color.White;
-            this.btnDK.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDK.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnDK.Location = new System.Drawing.Point(0, 698);
-            this.btnDK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnDK.Name = "btnDK";
-            this.btnDK.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnDK.Size = new System.Drawing.Size(330, 69);
-            this.btnDK.TabIndex = 10;
-            this.btnDK.Text = "Đăng Ký Tài Khoản";
-            this.btnDK.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDK.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1920, 1106);
+            this.ClientSize = new System.Drawing.Size(1920, 1100);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panelTopBar);
             this.Controls.Add(this.panelSidebar);
@@ -461,6 +487,7 @@ namespace QuanLyKhachSan // Đảm bảo namespace khớp
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBoxClose;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2ImageButton btnMenu; // <-- KHAI BÁO NÚT MENU
+        private Guna2Button guna2Button1;
         private Guna2Button btnBaoCao;
         private Guna2Button btnDK;
     }
